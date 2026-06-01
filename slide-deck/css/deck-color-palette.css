@@ -1,0 +1,378 @@
+/* Color palette + test status diagram — scoped for slide deck (from case study) */
+.slide-5-ds-palette-wrap {
+  --space-md: var(--slide-5-inner-pad, 0.5rem);
+  /* Outer .color-palette-block inset (2× --space-md) */
+  --space-block-pad: calc(var(--space-md) * 2);
+  --space-sm: 0.35rem;
+  /*
+   * Match portfolio styles.css when body.dark (case study dark mode).
+   * :root --bg-primary-light is unchanged in dark mode — right column (icons + chart) stays #FAFAF9.
+   */
+  --bg-elevated: #12151a;
+  --border: #30363d;
+  --bg-alt: #181b22;
+  --text-muted: #8b949e;
+  --bg-primary-light: #fafaf9;
+  --white-soft: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  /* 5% narrower than column; left-aligned (column grid unchanged) */
+  width: 95%;
+  align-self: flex-start;
+  margin-inline: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 0.25rem;
+}
+
+.slide-5-ds-palette-wrap .color-palette {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.slide-5-ds-palette-wrap .color-palette-block {
+  padding: var(--space-block-pad);
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+/* First card: no padding-top on the box — inset moves to .color-palette-grid so the first
+   swatch row lines up with branding thumbnails (same cumulative offset from .slide-5-col-body). */
+.slide-5-ds-palette-wrap .color-palette > .color-palette-block:first-of-type {
+  padding-top: 0;
+  padding-left: var(--space-block-pad);
+  padding-right: var(--space-block-pad);
+  padding-bottom: var(--space-block-pad);
+}
+
+.slide-5-ds-palette-wrap .color-palette > .color-palette-block:first-of-type .color-palette-grid {
+  padding-top: var(--space-block-pad);
+}
+
+.slide-5-ds-palette-wrap .color-palette-block--legend {
+  background: var(--bg-alt);
+}
+
+.slide-5-ds-palette-wrap .color-palette-title {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: 0.669921875rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.slide-5-ds-palette-wrap .color-palette-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+.slide-5-ds-palette-wrap .color-swatch-group:last-child {
+  margin-bottom: 0;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group__body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group__header {
+  margin: 0;
+  padding-right: var(--space-md);
+  padding-top: 0.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.669921875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  align-self: center;
+  flex: 4 1 0;
+  min-width: 0;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group .color-swatch-row {
+  flex: 16 1 0;
+  min-width: 0;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group__icons {
+  flex: 5 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.6rem;
+  height: 4rem;
+  min-height: 4rem;
+  background: var(--bg-primary-light);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.slide-5-ds-palette-wrap .color-swatch-group__icons-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+.slide-5-ds-palette-wrap .color-swatch-group__icons img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.slide-5-ds-palette-wrap .color-swatch-group__icons:has(.color-swatch-group__chart-inline) {
+  overflow: hidden;
+}
+.slide-5-ds-palette-wrap .color-swatch-group__chart-inline {
+  width: 100%;
+  height: 1.5rem;
+  flex-shrink: 0;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.2s ease-out;
+}
+.slide-5-ds-palette-wrap .color-swatch-group.is-in-view .color-swatch-group__chart-inline {
+  clip-path: inset(0 0 0 0);
+}
+.slide-5-ds-palette-wrap .color-swatch-group__chart-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  vertical-align: top;
+}
+.slide-5-ds-palette-wrap .color-swatch-group__chart-area {
+  fill: var(--chart-fill);
+}
+.slide-5-ds-palette-wrap .color-swatch-group__chart-line {
+  stroke: var(--chart-line);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch-group__icons {
+  --chart-line: #efa3a6;
+  --chart-fill: #fbecec;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch-group__icons {
+  --chart-line: #8fd08f;
+  --chart-fill: #e6f6e6;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch-group__icons {
+  --chart-line: #e8d45f;
+  --chart-fill: #fff9e6;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--skipped .color-swatch-group__icons {
+  --chart-line: #4a4a48;
+  --chart-fill: #ecedeb;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--progress .color-swatch-group__icons {
+  --chart-line: #023b8f;
+  --chart-fill: #deecf9;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--type .color-swatch-group__icons {
+  --chart-line: #605e5c;
+  --chart-fill: #a19f9d;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group__icons--type-labels {
+  justify-content: center;
+  gap: 0.1rem;
+}
+.slide-5-ds-palette-wrap .color-swatch-group__type-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6220703125rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-row {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.slide-5-ds-palette-wrap .color-swatch {
+  flex: 1 1 0;
+  border-radius: 0;
+  padding: 0.6rem 0.7rem;
+  background: var(--bg-alt);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.slide-5-ds-palette-wrap .color-swatch-row .color-swatch:first-child {
+  border-radius: 8px 0 0 8px;
+}
+.slide-5-ds-palette-wrap .color-swatch-row .color-swatch:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.slide-5-ds-palette-wrap .color-swatch--strong {
+  border-width: 0;
+  color: var(--white-soft);
+}
+
+.slide-5-ds-palette-wrap .color-swatch--strong .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch--strong .color-swatch__meta {
+  color: var(--white-soft);
+}
+
+.slide-5-ds-palette-wrap .color-swatch__label {
+  font-family: var(--font-sans);
+  font-size: 0.6220703125rem;
+  font-weight: 600;
+}
+
+.slide-5-ds-palette-wrap .color-swatch__meta {
+  font-family: var(--font-sans);
+  font-size: 0.57421875rem;
+  color: var(--text-muted);
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch--strong {
+  background: #bc2f34;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch:nth-child(2),
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch:nth-child(3) {
+  color: #323130;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch:nth-child(2) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch:nth-child(2) .color-swatch__meta,
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch:nth-child(3) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch:nth-child(3) .color-swatch__meta {
+  color: #323130;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch:nth-child(2) {
+  background: #efa3a6;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--error .color-swatch:nth-child(3) {
+  background: #fbecec;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch--strong {
+  background: #0f700f;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch:nth-child(2),
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch:nth-child(3) {
+  color: #323130;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch:nth-child(2) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch:nth-child(2) .color-swatch__meta,
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch:nth-child(3) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch:nth-child(3) .color-swatch__meta {
+  color: #323130;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch:nth-child(2) {
+  background: #8fd08f;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--success .color-swatch:nth-child(3) {
+  background: #e6f6e6;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch--strong {
+  background: #8d7f00;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch:nth-child(2),
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch:nth-child(3) {
+  color: #323130;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch:nth-child(2) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch:nth-child(2) .color-swatch__meta,
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch:nth-child(3) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch:nth-child(3) .color-swatch__meta {
+  color: #323130;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch:nth-child(2) {
+  background: #e8d45f;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--flaky .color-swatch:nth-child(3) {
+  background: #fff9e6;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--skipped .color-swatch--strong {
+  background: #797775;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--skipped .color-swatch:nth-child(2) {
+  background: #4a4a48;
+  color: var(--white-soft);
+}
+.slide-5-ds-palette-wrap .color-swatch-group--skipped .color-swatch:nth-child(2) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--skipped .color-swatch:nth-child(2) .color-swatch__meta {
+  color: var(--white-soft);
+}
+.slide-5-ds-palette-wrap .color-swatch-group--skipped .color-swatch:nth-child(3) {
+  background: #ecedeb;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--skipped .color-swatch:nth-child(3) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--skipped .color-swatch:nth-child(3) .color-swatch__meta {
+  color: #323130;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--progress .color-swatch--strong {
+  background: #2b88d8;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--progress .color-swatch:nth-child(2) {
+  background: #023b8f;
+  color: var(--white-soft);
+}
+.slide-5-ds-palette-wrap .color-swatch-group--progress .color-swatch:nth-child(2) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--progress .color-swatch:nth-child(2) .color-swatch__meta {
+  color: var(--white-soft);
+}
+.slide-5-ds-palette-wrap .color-swatch-group--progress .color-swatch:nth-child(3) {
+  background: #deecf9;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--progress .color-swatch:nth-child(3) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--progress .color-swatch:nth-child(3) .color-swatch__meta {
+  color: #323130;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--type .color-swatch--strong {
+  background: #323130;
+}
+
+.slide-5-ds-palette-wrap .color-swatch-group--type .color-swatch:nth-child(2) {
+  background: #605e5c;
+  color: var(--white-soft);
+}
+.slide-5-ds-palette-wrap .color-swatch-group--type .color-swatch:nth-child(2) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--type .color-swatch:nth-child(2) .color-swatch__meta {
+  color: var(--white-soft);
+}
+.slide-5-ds-palette-wrap .color-swatch-group--type .color-swatch:nth-child(3) {
+  background: #a19f9d;
+}
+.slide-5-ds-palette-wrap .color-swatch-group--type .color-swatch:nth-child(3) .color-swatch__label,
+.slide-5-ds-palette-wrap .color-swatch-group--type .color-swatch:nth-child(3) .color-swatch__meta {
+  color: #323130;
+}

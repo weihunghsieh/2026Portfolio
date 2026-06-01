@@ -1,0 +1,207 @@
+/* IA structure diagram — lightbox layout + scale (matches microsoft-playwright-testing lightbox) */
+
+.slide-structure-diagram {
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-2xl: 1.5rem;
+  --text-muted: #8a8680;
+  --divider: #3d424d;
+  --bg-alt: #1a1d23;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  width: 100%;
+  max-width: min(96vw, 1440px);
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.ia-guide-scale-wrap {
+  display: inline-block;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Same grid + typography as .ia-lightbox__body .ia-guide on the case study page */
+.slide-structure-diagram .ia-guide {
+  margin: 0;
+  /* Card inset only (not slide padding): ~2× former 0.75rem; bottom 1.5× for breathing room */
+  --ia-guide-pad: clamp(1.875rem, 4.5vw, 3rem);
+  padding: var(--ia-guide-pad);
+  padding-bottom: calc(var(--ia-guide-pad) * 1.5);
+  background: var(--bg-alt);
+  border-radius: 8px;
+  border: 1px solid var(--divider);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns:
+    minmax(min-content, 283fr) minmax(min-content, 314fr) minmax(min-content, 314fr)
+    minmax(min-content, 283fr) minmax(min-content, 314fr);
+  column-gap: 3rem;
+  /* Space above the horizontal rule between mains and Features — 1.5× prior (was 2× base row gap) */
+  row-gap: calc(var(--space-2xl) * 2 * 1.5);
+}
+
+.slide-structure-diagram .ia-guide-mains {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  column-gap: 3rem;
+}
+
+.slide-structure-diagram .ia-features {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  column-gap: 3rem;
+  padding-top: calc(var(--space-lg) * 1.5);
+  margin-top: 0;
+  border-top: 1px solid var(--divider);
+}
+
+.slide-structure-diagram .ia-features-label {
+  grid-column: 1 / -1;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.slide-structure-diagram .ia-features-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  column-gap: 3rem;
+}
+
+.slide-structure-diagram .ia-main {
+  min-width: 0;
+  overflow: visible;
+}
+
+.slide-structure-diagram .ia-main-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 1rem 0.35rem 0.5rem;
+  background: #3d4048;
+  color: #e6eef4;
+  border-radius: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-bottom: 0.625rem;
+  font-size: 1rem;
+}
+
+.slide-structure-diagram .ia-main-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.slide-structure-diagram .ia-main-items li {
+  margin-bottom: 0.15rem;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.slide-structure-diagram .ia-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: inherit;
+  vertical-align: middle;
+}
+
+.slide-structure-diagram .ia-icon svg,
+.slide-structure-diagram .ia-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-structure-diagram .ia-icon img {
+  object-fit: contain;
+}
+
+.slide-structure-diagram .ia-guide .ia-main-items .ia-icon img,
+.slide-structure-diagram .ia-guide .ia-features-list .ia-icon img {
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+.slide-structure-diagram .ia-icon-sm {
+  margin-right: 0.15rem;
+  width: 18px;
+  height: 18px;
+}
+
+.slide-structure-diagram .ia-main-pill .ia-icon {
+  width: 21px;
+  height: 21px;
+}
+
+.slide-structure-diagram .ia-features-col-empty {
+  min-width: 0;
+}
+
+.slide-structure-diagram .ia-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.slide-structure-diagram .ia-features-list li {
+  margin-bottom: 0.2rem;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+/* Staggered dissolve-in — same behavior as microsoft-playwright-testing (Structure) */
+.slide-structure-diagram .ia-guide .ia-main-items li,
+.slide-structure-diagram .ia-guide .ia-features-list li {
+  opacity: 0;
+}
+
+.slide-structure-diagram .ia-guide.ia-guide-visible .ia-main-items li,
+.slide-structure-diagram .ia-guide.ia-guide-visible .ia-features-list li {
+  animation: ia-dissolve-in 0.4s ease-out forwards;
+}
+
+@keyframes ia-dissolve-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-structure-diagram .ia-guide .ia-main-items li,
+  .slide-structure-diagram .ia-guide .ia-features-list li {
+    opacity: 1;
+    animation: none;
+  }
+}

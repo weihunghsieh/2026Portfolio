@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Playwright Testing — Wei-Hung Hsieh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">Wei-Hung Hsieh</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#education">Education</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="theme-toggle-icon" aria-hidden="true"></span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="case-study">
+    <article class="case-article">
+      <!-- Hero -->
+      <header class="case-hero section">
+        <p class="case-eyebrow">Microsoft</p>
+        <h1 class="case-title">Microsoft Playwright Testing</h1>
+        <p class="case-tagline">Taming complex, hierarchical test data into an intelligible cloud-based debugging dashboard for enterprise QA engineering teams.</p>
+        <div class="case-meta case-meta-cols">
+          <div class="case-meta-overview">
+            <p><strong>Project Overview</strong></p>
+            <p>Microsoft Playwright Testing is a paid cloud service built on the open-source Playwright framework for testing cloud applications. <span class="case-hero__emphasis">My design focuses on the results dashboard, helping users quickly interpret and act on test outcomes.</span></p>
+            <p><span class="case-hero__emphasis">As the sole UX designer, I took the product from concept to launch</span> — transforming a single-user testing tool into an enterprise-scale system supporting 50+ concurrent test configurations and enabling QA teams to debug failures and track quality trends across environments.</p>
+          </div>
+          <div class="case-meta-status">
+            <p><strong>Team</strong></p>
+            <ul class="case-meta-team">
+              <li>UX Designer (Me)</li>
+              <li>UX Researcher</li>
+              <li>Content Designer</li>
+              <li>Product Manager *2</li>
+              <li>Frontend dev</li>
+              <li>Backend dev *2</li>
+            </ul>
+            <p class="case-meta-status-block"><strong>Project status</strong></p>
+            <p><a href="https://azure.microsoft.com/en-us/products/playwright-testing" target="_blank" rel="noopener">Public Preview</a> in 2023</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="case-media-block section case-media-hero case-media-image">
+        <img class="case-hero-image" src="assets/PlaywrightVidMini.gif" alt="Microsoft Playwright Testing dashboard — Employee Portal with Dashboard insights and test runs table" width="1920" height="1080">
+        <p class="case-hero-prototype-cta">
+          <a href="https://www.figma.com/proto/w2X3f2LQ7EerPJPK7Pvtxz/Presentation-prototypes?page-id=0%3A1&node-id=1-18027&starting-point-node-id=1%3A18027&scaling=contain&content-scaling=fixed&t=Dx6AcwqvKxk1lwbc-1" class="ia-guide-view-full" target="_blank" rel="noopener noreferrer" aria-label="View full prototype"><i data-lucide="expand" class="ia-guide-view-full-icon" aria-hidden="true"></i>View full prototype</a>
+        </p>
+      </div>
+
+      <div class="case-callout section">
+        <p class="case-callout__content">The real challenge wasn't scale.</p>
+        <p class="case-callout__content">It was helping teams stay oriented while navigating deeply layered test data.</p>
+      </div>
+
+      <!-- My Design Impact -->
+      <section class="case-section case-section--design-impact section">
+        <h2 class="case-heading">My Design Impact</h2>
+
+        <div class="impact-item impact-item--insight">
+          <div class="impact-item-content">
+            <h3 class="impact-item-title"><i data-lucide="line-chart" class="impact-title-icon" aria-hidden="true"></i>Insight</h3>
+            <p><span class="marker-highlight">Designed data visualization patterns</span> for debugging and trend analysis, including a new time-series pattern for representing test status across runs, enabling teams to quickly spot regressions, flaky behavior, and long-term quality trends.</p>
+          </div>
+          <div class="impact-item-thumbnail">
+            <div class="dataviz-viewport" id="dataviz-toggle" aria-label="Insight cards — status">
+              <div class="dataviz-panes">
+                <div class="dataviz-pane dataviz-pane--active" id="dataviz-panel-healthy" role="tabpanel" aria-labelledby="dataviz-tab-healthy" data-dataviz="healthy">
+                <div class="dataviz-gallery__rows">
+                  <div class="dataviz-gallery__row">
+                    <div class="dataviz-gallery__scroll">
+                      <div class="dataviz-gallery__track">
+                        <div class="dataviz-gallery__row-track">
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-8.png" alt="Insight card 100% pass 8" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-9.png" alt="Insight card 100% pass 9" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-5.png" alt="Insight card 100% pass 5" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-3.png" alt="Insight card 100% pass 3" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-11.png" alt="Insight card 100% pass 11" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-6.png" alt="Insight card 100% pass 6" loading="lazy" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dataviz-gallery__row">
+                    <div class="dataviz-gallery__scroll">
+                      <div class="dataviz-gallery__track dataviz-gallery__track--reverse">
+                        <div class="dataviz-gallery__row-track">
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-7.png" alt="Insight card 100% pass 7" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React).png" alt="Insight card 100% pass" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-1.png" alt="Insight card 100% pass 1" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-4.png" alt="Insight card 100% pass 4" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-2.png" alt="Insight card 100% pass 2" loading="lazy" />
+                          <img src="assets/dataviz/100-percent-pass/Insight%20card%20(React)-10.png" alt="Insight card 100% pass 10" loading="lazy" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="dataviz-pane" id="dataviz-panel-failing" role="tabpanel" aria-labelledby="dataviz-tab-failing" data-dataviz="failing">
+                  <div class="dataviz-gallery__rows">
+                    <div class="dataviz-gallery__row">
+                      <div class="dataviz-gallery__scroll">
+                        <div class="dataviz-gallery__track">
+                          <div class="dataviz-gallery__row-track">
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-4.png" alt="Insight card 33% fail 4" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-5.png" alt="Insight card 33% fail 5" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React).png" alt="Insight card 33% fail" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-9.png" alt="Insight card 33% fail 9" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-1.png" alt="Insight card 33% fail 1" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-2.png" alt="Insight card 33% fail 2" loading="lazy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dataviz-gallery__row">
+                      <div class="dataviz-gallery__scroll">
+                        <div class="dataviz-gallery__track dataviz-gallery__track--reverse">
+                          <div class="dataviz-gallery__row-track">
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-3.png" alt="Insight card 33% fail 3" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-6.png" alt="Insight card 33% fail 6" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-7.png" alt="Insight card 33% fail 7" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-10.png" alt="Insight card 33% fail 10" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-8.png" alt="Insight card 33% fail 8" loading="lazy" />
+                            <img src="assets/dataviz/33-percent-fail/Insight%20card%20(React)-11.png" alt="Insight card 33% fail 11" loading="lazy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dataviz-row">
+                <span class="dataviz-label">Status:</span>
+                <div class="dataviz-tabs" role="tablist" aria-label="View mode">
+                  <span class="dataviz-tab-slider" aria-hidden="true"></span>
+                  <button type="button" class="dataviz-tab dataviz-tab--active" role="tab" aria-selected="true" aria-controls="dataviz-panel-healthy" id="dataviz-tab-healthy" data-dataviz="healthy">Healthy</button>
+                  <button type="button" class="dataviz-tab" role="tab" aria-selected="false" aria-controls="dataviz-panel-failing" id="dataviz-tab-failing" data-dataviz="failing">Test failing</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact-item impact-item--insight-layout">
+          <div class="impact-item-content">
+            <h3 class="impact-item-title"><i data-lucide="layers" class="impact-title-icon" aria-hidden="true"></i>Structure</h3>
+            <p>Defined the <span class="marker-highlight">information architecture for a deeply hierarchical testing system</span>, enabling QA teams to navigate and debug dozens of concurrent test configurations without losing context.</p>
+            <p>Established a single source of truth by unifying loosely defined and overlapping concepts into a shared model across product, design, and engineering.</p>
+          </div>
+          <div class="impact-item-thumbnail impact-item-thumbnail--ia">
+            <div class="ia-guide-wrapper">
+              <figure class="ia-guide js-ia-guide-diagram" aria-label="IA guide — information architecture hierarchy" id="ia-guide-figure">
+              <div class="ia-guide-mains">
+                <div class="ia-main">
+                  <div class="ia-main-pill"><span class="ia-icon" aria-hidden="true"><img src="assets/playwright-icons/00%20Global.svg" alt="" width="14" height="14"></span>00 Global</div>
+                  <ul class="ia-main-items">
+                    <li>00a Global metadata</li>
+                    <li>00b Global insights</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/00c.svg" alt="" width="12" height="12"></span>00c Workspace list</li>
+                  </ul>
+                </div>
+                <div class="ia-main">
+                  <div class="ia-main-pill"><span class="ia-icon" aria-hidden="true"><img src="assets/playwright-icons/01%20Workspace.svg" alt="" width="14" height="14"></span>01 Workspace</div>
+                  <ul class="ia-main-items">
+                    <li>01a Workspace metadata</li>
+                    <li>01b Workspace insights</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/01c.svg" alt="" width="12" height="12"></span>01c Dashboard list</li>
+                  </ul>
+                </div>
+                <div class="ia-main">
+                  <div class="ia-main-pill"><span class="ia-icon" aria-hidden="true"><img src="assets/playwright-icons/02%20Dashboard.svg" alt="" width="14" height="14"></span>02 Dashboard</div>
+                  <ul class="ia-main-items">
+                    <li>02a Dashboard metadata</li>
+                    <li>02b Dashboard insights</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/02c.svg" alt="" width="12" height="12"></span>02c Test run list</li>
+                  </ul>
+                </div>
+                <div class="ia-main">
+                  <div class="ia-main-pill"><span class="ia-icon" aria-hidden="true"><img src="assets/playwright-icons/03%20Test%20run.svg" alt="" width="14" height="14"></span>03 Test run</div>
+                  <ul class="ia-main-items">
+                    <li>03a Test run metadata</li>
+                    <li>03b Test run insights</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/03c1.svg" alt="" width="12" height="12"></span>03c1 Test suite list</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/03c2.svg" alt="" width="12" height="12"></span>03c2 Test group list</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/03c3.svg" alt="" width="12" height="12"></span>03c3 Test case list</li>
+                  </ul>
+                </div>
+                <div class="ia-main">
+                  <div class="ia-main-pill"><span class="ia-icon" aria-hidden="true"><img src="assets/playwright-icons/04%20Test%20case.svg" alt="" width="14" height="14"></span>04 Test case</div>
+                  <ul class="ia-main-items">
+                    <li>04a Test case metadata</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ia-features">
+                <p class="ia-features-label">Features</p>
+                <div class="ia-features-grid">
+                  <ul class="ia-features-list">
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/00-A.svg" alt="" width="12" height="12"></span>00-A Account mgmt</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/00-B.svg" alt="" width="12" height="12"></span>00-B Pricing</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/00-C.svg" alt="" width="12" height="12"></span>00-C Documentation</li>
+                  </ul>
+                  <ul class="ia-features-list">
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/01-A.svg" alt="" width="12" height="12"></span>01-A Get started</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/01-B.svg" alt="" width="12" height="12"></span>01-B Access token</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/01-C.svg" alt="" width="12" height="12"></span>01-C Manage access</li>
+                  </ul>
+                  <div class="ia-features-col-empty"></div>
+                  <div class="ia-features-col-empty"></div>
+                  <ul class="ia-features-list">
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/04-A.svg" alt="" width="12" height="12"></span>04-A Output/Test steps</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/04-B.svg" alt="" width="12" height="12"></span>04-B Run history</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/04-C.svg" alt="" width="12" height="12"></span>04-C Screenshot</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/04-D.svg" alt="" width="12" height="12"></span>04-D Video</li>
+                    <li><span class="ia-icon ia-icon-sm"><img src="assets/playwright-icons/04-E.svg" alt="" width="12" height="12"></span>04-E Trace Viewer</li>
+                  </ul>
+                </div>
+              </div>
+            </figure>
+              <div class="ia-guide-actions">
+                <button type="button" class="ia-guide-view-full js-ia-guide-open" aria-label="View full diagram"><i data-lucide="expand" class="ia-guide-view-full-icon" aria-hidden="true"></i>View full diagram</button>
+              </div>
+            </div>
+            <div class="ia-lightbox js-ia-lightbox" id="ia-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="IA diagram full view">
+              <div class="ia-lightbox__backdrop js-ia-lightbox-close"></div>
+              <div class="ia-lightbox__content">
+                <button type="button" class="ia-lightbox__close js-ia-lightbox-close" aria-label="Close">×</button>
+                <div class="ia-lightbox__body"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact-item impact-item--nav">
+          <div class="impact-item-thumbnail">
+            <div class="nav-thumbnail-wrapper">
+              <div class="nav-thumbnail nav-thumbnail--composite js-nav-thumbnail-dissolve" id="nav-thumbnail-diagram" aria-label="Microsoft Playwright Testing — Dashboard (Figma components)">
+              <div class="nav-thumbnail-row nav-thumbnail-row--top">
+                <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark" style="background-color: var(--level-00-global)">
+                  <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">00 Global level nav</span></span>
+                  <img class="nav-thumbnail-img" src="assets/Top nav header (React).png" alt="" width="1200" height="48">
+                </span>
+              </div>
+              <div class="nav-thumbnail-row nav-thumbnail-row--body">
+                <div class="nav-thumbnail-col-l2">
+                  <div class="nav-thumbnail-l2-row nav-thumbnail-l2-row--top">
+                    <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-light nav-thumbnail-img-wrap--l2-hover-group" style="background-color: var(--level-01-workspace)">
+                      <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">01 Workspace</span></span>
+                      <img class="nav-thumbnail-img" src="assets/L3-top-dc156955-a872-43a7-a721-a8b9c2e6363a.png" alt="" width="960" height="160">
+                    </span>
+                  </div>
+                  <div class="nav-thumbnail-l2-row nav-thumbnail-l2-row--body">
+                    <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--l2-left nav-thumbnail-img-wrap--label-light nav-thumbnail-img-wrap--l2-hover-group" style="background-color: var(--level-01-workspace)">
+                      <img class="nav-thumbnail-img" src="assets/L3-left-79841945-ae90-413d-8717-e321cfb60d4f.png" alt="" width="240" height="400">
+                    </span>
+                    <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--l2-right nav-thumbnail-img-wrap--label-light" style="background-color: var(--level-02-dashboard-nav)">
+                      <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">02 Dashboard level nav</span></span>
+                      <img class="nav-thumbnail-img" src="assets/L2-50909665-5832-41de-833d-108edc864874.png" alt="" width="720" height="400">
+                    </span>
+                  </div>
+                </div>
+                <div class="nav-thumbnail-stack">
+                  <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-light" style="background-color: var(--level-03-where)">
+                    <span class="nav-thumbnail-label nav-thumbnail-label--two-col" aria-hidden="true">
+                      <span class="nav-thumbnail-label__col"><span class="nav-thumbnail-label__text">03 Test run level breadcrumb</span></span>
+                      <span class="nav-thumbnail-label__col nav-thumbnail-label__col--muted nav-thumbnail-label__col--bold"><span class="nav-thumbnail-label__text">"Where"</span></span>
+                    </span>
+                    <img class="nav-thumbnail-img" src="assets/L3_top-733b2778-55e5-459a-890d-9a3823bbc5fe.png" alt="" width="960" height="160">
+                  </span>
+                  <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-light" style="background-color: var(--level-03a-what)">
+                    <span class="nav-thumbnail-label nav-thumbnail-label--two-col" aria-hidden="true">
+                      <span class="nav-thumbnail-label__col"><span class="nav-thumbnail-label__text">Metadata <span class="nav-thumbnail-label__light">of this level</span></span></span>
+                      <span class="nav-thumbnail-label__col nav-thumbnail-label__col--muted nav-thumbnail-label__col--bold"><span class="nav-thumbnail-label__text">"What"</span></span>
+                    </span>
+                    <img class="nav-thumbnail-img" src="assets/L3_bottom-2ecb684a-d9cb-4920-a2f5-0bc7c5f12038.png" alt="" width="960" height="80">
+                  </span>
+                  <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-light" style="background-color: var(--level-insights)">
+                    <span class="nav-thumbnail-label nav-thumbnail-label--two-col nav-thumbnail-label--two-col--full" aria-hidden="true">
+                      <span class="nav-thumbnail-label__col"><span class="nav-thumbnail-label__text">Insights <span class="nav-thumbnail-label__light">of this level</span></span></span>
+                    </span>
+                    <img class="nav-thumbnail-img" src="assets/Data_insights-b3726f00-673f-49af-92dc-d87dd3747e96.png" alt="" width="960" height="400">
+                  </span>
+                  <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-light" style="background-color: var(--level-raw-data)">
+                    <span class="nav-thumbnail-label nav-thumbnail-label--two-col" aria-hidden="true">
+                      <span class="nav-thumbnail-label__col"><span class="nav-thumbnail-label__text">Raw data <span class="nav-thumbnail-label__light">of this level</span></span></span>
+                      <span class="nav-thumbnail-label__col nav-thumbnail-label__col--muted nav-thumbnail-label__col--bold"><span class="nav-thumbnail-label__text">"Why"</span></span>
+                    </span>
+                    <img class="nav-thumbnail-img" src="assets/Raw_data-8b5b50ff-a7da-450f-a617-105d30562064.png" alt="" width="960" height="440">
+                  </span>
+                </div>
+              </div>
+            </div>
+              <div class="nav-thumbnail-actions">
+                <button type="button" class="ia-guide-view-full js-nav-thumbnail-open" aria-label="View full diagram"><i data-lucide="expand" class="ia-guide-view-full-icon" aria-hidden="true"></i>View full diagram</button>
+              </div>
+            </div>
+            <div class="ia-lightbox js-nav-lightbox" id="nav-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation diagram full view">
+              <div class="ia-lightbox__backdrop js-nav-lightbox-close"></div>
+              <div class="ia-lightbox__content">
+                <button type="button" class="ia-lightbox__close js-nav-lightbox-close" aria-label="Close">×</button>
+                <div class="ia-lightbox__body"></div>
+              </div>
+            </div>
+          </div>
+          <div class="impact-item-content">
+            <h3 class="impact-item-title"><i data-lucide="compass" class="impact-title-icon" aria-hidden="true"></i>Navigation & Sensemaking</h3>
+            <p>Designed the navigation and sensemaking model around three core questions QA engineers ask when debugging at scale:</p>
+            <ul>
+              <li><span class="marker-highlight">Where am I in the data structure?</span></li>
+              <li><span class="marker-highlight">What is this test about?</span></li>
+              <li><span class="marker-highlight">Why is it failing?</span></li>
+            </ul>
+            <p>The layout combines left navigation for cross-project orientation with breadcrumbs and progressive disclosure to guide users from overview to root-cause investigation.</p>
+          </div>
+        </div>
+
+        <div class="impact-item impact-item--with-sub impact-item--insight-layout">
+          <div class="impact-item-content">
+            <h3 class="impact-item-title"><i data-lucide="grid-3x3" class="impact-title-icon" aria-hidden="true"></i>Design System</h3>
+            <p><span class="marker-highlight">Established the product's design system</span> by adapting and extending Microsoft Fluent, aligning visual language, interaction patterns, and component usage to <span class="marker-highlight">ensure consistency and scalability</span> across a new cloud-based platform.</p>
+          </div>
+          <div class="impact-sub-items">
+            <div class="impact-sub-item impact-sub-item--responsive">
+              <h4 class="impact-sub-item-title">Responsive behavior</h4>
+              <div class="impact-sub-item-thumbnail">
+                <img src="assets/Slide-5e626c95-c63a-4fe4-a19c-98b1e36b6c31.png" alt="Playwright dashboard — Project details and Top failing projects insights">
+              </div>
+            </div>
+            <div class="impact-sub-item impact-sub-item--color-palette">
+              <h4 class="impact-sub-item-title">Color palette and test status</h4>
+              <div class="impact-sub-item-thumbnail">
+                <div class="color-palette">
+                  <!-- Variant 1: grouped status swatch cards -->
+                  <section class="color-palette-block" id="status-color-system">
+                    <div class="color-palette-grid">
+                      <!-- Error -->
+                      <article class="color-swatch-group color-swatch-group--error">
+                        <div class="color-swatch-group__body">
+                          <header class="color-swatch-group__header">Error</header>
+                          <div class="color-swatch-row">
+                          <div class="color-swatch color-swatch--strong">
+                            <div class="color-swatch__label">Icon</div>
+                            <div class="color-swatch__meta">#BC2F34</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Border</div>
+                            <div class="color-swatch__meta">#EFA3A6</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Background</div>
+                            <div class="color-swatch__meta">#FBECEC</div>
+                          </div>
+                        </div>
+                          <div class="color-swatch-group__icons">
+                            <div class="color-swatch-group__icons-row">
+                              <img src="assets/Failed_filled-cf872312-5e5e-442e-ada6-74a75c5e58ed.png" alt="Failed filled" width="24" height="24" />
+                              <img src="assets/Failed_outline-d441684a-afe5-4cf4-a6d2-5e7b81f5b65d.png" alt="Failed outline" width="24" height="24" />
+                            </div>
+                            <div class="color-swatch-group__chart-inline" aria-hidden="true">
+                              <svg class="color-swatch-group__chart-svg" viewBox="0 0 60 24" preserveAspectRatio="none">
+                                <path class="color-swatch-group__chart-area" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8 L60,24 L0,24 Z" />
+                                <path class="color-swatch-group__chart-line" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                      <!-- Success -->
+                      <article class="color-swatch-group color-swatch-group--success">
+                        <div class="color-swatch-group__body">
+                          <header class="color-swatch-group__header">Success</header>
+                          <div class="color-swatch-row">
+                          <div class="color-swatch color-swatch--strong">
+                            <div class="color-swatch__label">Icon</div>
+                            <div class="color-swatch__meta">#0F700F</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Border</div>
+                            <div class="color-swatch__meta">#8FD08F</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Background</div>
+                            <div class="color-swatch__meta">#E6F6E6</div>
+                          </div>
+                        </div>
+                          <div class="color-swatch-group__icons">
+                            <div class="color-swatch-group__icons-row">
+                              <img src="assets/Success_filled-992805bf-95a6-4988-a277-5c3ca0d3cf9e.png" alt="Success filled" width="24" height="24" />
+                              <img src="assets/Success_outline-63650ecd-32bf-406d-8770-d473da7f7e75.png" alt="Success outline" width="24" height="24" />
+                            </div>
+                            <div class="color-swatch-group__chart-inline" aria-hidden="true">
+                              <svg class="color-swatch-group__chart-svg" viewBox="0 0 60 24" preserveAspectRatio="none">
+                                <path class="color-swatch-group__chart-area" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8 L60,24 L0,24 Z" />
+                                <path class="color-swatch-group__chart-line" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                      <!-- Flaky -->
+                      <article class="color-swatch-group color-swatch-group--flaky">
+                        <div class="color-swatch-group__body">
+                          <header class="color-swatch-group__header">Flaky</header>
+                          <div class="color-swatch-row">
+                          <div class="color-swatch color-swatch--strong">
+                            <div class="color-swatch__label">Icon</div>
+                            <div class="color-swatch__meta">#8D7F00</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Border</div>
+                            <div class="color-swatch__meta">#E8D45F</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Background</div>
+                            <div class="color-swatch__meta">#FFF9E6</div>
+                          </div>
+                        </div>
+                          <div class="color-swatch-group__icons">
+                            <div class="color-swatch-group__icons-row">
+                              <img src="assets/Flaky_filled-8ad29f42-61bc-4450-b045-bda26131366a.png" alt="Flaky filled" width="24" height="24" />
+                              <img src="assets/Flaky_outline-c6ba5cf9-b014-46e9-9e40-62181769874e.png" alt="Flaky outline" width="24" height="24" />
+                            </div>
+                            <div class="color-swatch-group__chart-inline" aria-hidden="true">
+                              <svg class="color-swatch-group__chart-svg" viewBox="0 0 60 24" preserveAspectRatio="none">
+                                <path class="color-swatch-group__chart-area" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8 L60,24 L0,24 Z" />
+                                <path class="color-swatch-group__chart-line" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                      <!-- Skipped / Not run -->
+                      <article class="color-swatch-group color-swatch-group--skipped">
+                        <div class="color-swatch-group__body">
+                          <header class="color-swatch-group__header">Skipped</header>
+                          <div class="color-swatch-row">
+                          <div class="color-swatch color-swatch--strong">
+                            <div class="color-swatch__label">Icon</div>
+                            <div class="color-swatch__meta">#797775</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Border</div>
+                            <div class="color-swatch__meta">#4A4A48</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Background</div>
+                            <div class="color-swatch__meta">#ECEDEB</div>
+                          </div>
+                        </div>
+                          <div class="color-swatch-group__icons">
+                            <div class="color-swatch-group__icons-row">
+                              <img src="assets/Skipped_filled-99649f2e-583e-414d-b64a-9a8c62050cba.png" alt="Skipped filled" width="24" height="24" />
+                              <img src="assets/Skipped_outline-031e2a00-b842-455b-8d61-f51b61a69e66.png" alt="Skipped outline" width="24" height="24" />
+                            </div>
+                            <div class="color-swatch-group__chart-inline" aria-hidden="true">
+                              <svg class="color-swatch-group__chart-svg" viewBox="0 0 60 24" preserveAspectRatio="none">
+                                <path class="color-swatch-group__chart-area" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8 L60,24 L0,24 Z" />
+                                <path class="color-swatch-group__chart-line" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                      <!-- Progress -->
+                      <article class="color-swatch-group color-swatch-group--progress">
+                        <div class="color-swatch-group__body">
+                          <header class="color-swatch-group__header">Progress</header>
+                          <div class="color-swatch-row">
+                          <div class="color-swatch color-swatch--strong">
+                            <div class="color-swatch__label">Icon</div>
+                            <div class="color-swatch__meta">#2B88D8</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Border</div>
+                            <div class="color-swatch__meta">#023B8F</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Background</div>
+                            <div class="color-swatch__meta">#DEECF9</div>
+                          </div>
+                        </div>
+                          <div class="color-swatch-group__icons">
+                            <div class="color-swatch-group__icons-row">
+                              <img src="assets/In_progress_filled-e82b4ade-8b01-4085-a2f2-8b9bf1b8e01b.png" alt="In progress filled" width="24" height="24" />
+                              <img src="assets/In_progress_outline-ab4070f0-c1a7-43c9-9f8c-911946403a3e.png" alt="In progress outline" width="24" height="24" />
+                            </div>
+                            <div class="color-swatch-group__chart-inline" aria-hidden="true">
+                              <svg class="color-swatch-group__chart-svg" viewBox="0 0 60 24" preserveAspectRatio="none">
+                                <path class="color-swatch-group__chart-area" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8 L60,24 L0,24 Z" />
+                                <path class="color-swatch-group__chart-line" d="M0,4 L3,4 L6,4 L9,8 L12,10 L15,10 L18,10 L21,6 L24,4 L27,4 L30,4 L33,8 L36,14 L39,14 L42,14 L45,10 L48,6 L51,4 L54,4 L60,8" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                      <!-- Type -->
+                      <article class="color-swatch-group color-swatch-group--type">
+                        <div class="color-swatch-group__body">
+                          <header class="color-swatch-group__header">Type</header>
+                          <div class="color-swatch-row">
+                          <div class="color-swatch color-swatch--strong">
+                            <div class="color-swatch__label">Primary</div>
+                            <div class="color-swatch__meta">#323130</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Secondary</div>
+                            <div class="color-swatch__meta">#605E5C</div>
+                          </div>
+                          <div class="color-swatch">
+                            <div class="color-swatch__label">Disabled</div>
+                            <div class="color-swatch__meta">#A19F9D</div>
+                          </div>
+                        </div>
+                          <div class="color-swatch-group__icons color-swatch-group__icons--type-labels">
+                            <span class="color-swatch-group__type-label" style="color: #323130;">Primary</span>
+                            <span class="color-swatch-group__type-label" style="color: #605E5C;">Secondary</span>
+                            <span class="color-swatch-group__type-label" style="color: #A19F9D;">Disabled</span>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                  </section>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="impact-sub-item impact-sub-item--top-failing">
+              <h4 class="impact-sub-item-title">Dynamic insight cards for different viewport width</h4>
+              <div class="impact-sub-item-thumbnail">
+                <div class="top-failing-cards">
+                  <div class="top-failing-card top-failing-card--small">
+                          <h5 class="top-failing-card__title">Top failing projects</h5>
+                          <div class="top-failing-card__divider"></div>
+                          <table class="top-failing-card__table">
+                            <colgroup>
+                              <col class="top-failing-card__col-project">
+                              <col class="top-failing-card__col-pct">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th class="top-failing-card__th-project">Project</th>
+                                <th class="top-failing-card__th-pct">Failed %</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a href="#" class="top-failing-card__link">chromium-on-ubuntu</a></td>
+                                <td><span class="top-failing-card__pct">100%</span></td>
+                              </tr>
+                              <tr>
+                                <td><a href="#" class="top-failing-card__link">firefox-on-ubuntu</a></td>
+                                <td><span class="top-failing-card__pct">60%</span></td>
+                              </tr>
+                              <tr>
+                                <td><a href="#" class="top-failing-card__link">iPhone 13 Pro Max landscape</a></td>
+                                <td><span class="top-failing-card__pct">30%</span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                  </div>
+                  <div class="top-failing-card top-failing-card--medium">
+                          <h5 class="top-failing-card__title">Top failing projects<span class="top-failing-card__title-meta">in total 81 test cases</span></h5>
+                          <div class="top-failing-card__divider"></div>
+                          <table class="top-failing-card__table top-failing-card__table--wide">
+                            <colgroup>
+                              <col class="top-failing-card__col-project">
+                              <col class="top-failing-card__col-pct">
+                              <col class="top-failing-card__col-cases">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th class="top-failing-card__th-project">Project</th>
+                                <th class="top-failing-card__th-pct">Failed %</th>
+                                <th class="top-failing-card__th-cases">Failed / cases in project</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a href="#" class="top-failing-card__link">chromium-on-ubuntu</a></td>
+                                <td><span class="top-failing-card__pct">100%</span></td>
+                                <td><div class="top-failing-card__cases-cell"><div class="top-failing-card__progress"><span class="top-failing-card__progress-fill" style="width: 100%"></span></div><span class="top-failing-card__cases-text">27/27</span></div></td>
+                              </tr>
+                              <tr>
+                                <td><a href="#" class="top-failing-card__link">firefox-on-ubuntu</a></td>
+                                <td><span class="top-failing-card__pct">60%</span></td>
+                                <td><div class="top-failing-card__cases-cell"><div class="top-failing-card__progress"><span class="top-failing-card__progress-fill" style="width: 60%"></span></div><span class="top-failing-card__cases-text">16/27</span></div></td>
+                              </tr>
+                              <tr>
+                                <td><a href="#" class="top-failing-card__link">iPhone 13 Pro Max landscape</a></td>
+                                <td><span class="top-failing-card__pct">30%</span></td>
+                                <td><div class="top-failing-card__cases-cell"><div class="top-failing-card__progress"><span class="top-failing-card__progress-fill" style="width: 30%"></span></div><span class="top-failing-card__cases-text">9/27</span></div></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                  </div>
+                  <div class="top-failing-card top-failing-card--large">
+                          <h5 class="top-failing-card__title">Top failing projects<span class="top-failing-card__title-meta">in total 81 test cases</span></h5>
+                          <div class="top-failing-card__divider"></div>
+                          <table class="top-failing-card__table top-failing-card__table--triple">
+                            <colgroup>
+                              <col class="top-failing-card__col-project">
+                              <col class="top-failing-card__col-browser">
+                              <col class="top-failing-card__col-os">
+                              <col class="top-failing-card__col-pct">
+                              <col class="top-failing-card__col-cases">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th class="top-failing-card__th-project">Project</th>
+                                <th class="top-failing-card__th-browser">Browser</th>
+                                <th class="top-failing-card__th-os">OS</th>
+                                <th class="top-failing-card__th-pct">Failed %</th>
+                                <th class="top-failing-card__th-cases">Failed / cases in project</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a href="#" class="top-failing-card__link">chromium-on-ubuntu</a></td>
+                                <td><span class="top-failing-card__browser">Chromium</span></td>
+                                <td><span class="top-failing-card__os">Linux</span></td>
+                                <td><span class="top-failing-card__pct">100%</span></td>
+                                <td><div class="top-failing-card__cases-cell"><div class="top-failing-card__progress"><span class="top-failing-card__progress-fill" style="width: 100%"></span></div><span class="top-failing-card__cases-text">27/27</span></div></td>
+                              </tr>
+                              <tr>
+                                <td><a href="#" class="top-failing-card__link">firefox-on-ubuntu</a></td>
+                                <td><span class="top-failing-card__browser">Firefox</span></td>
+                                <td><span class="top-failing-card__os">Linux</span></td>
+                                <td><span class="top-failing-card__pct">60%</span></td>
+                                <td><div class="top-failing-card__cases-cell"><div class="top-failing-card__progress"><span class="top-failing-card__progress-fill" style="width: 60%"></span></div><span class="top-failing-card__cases-text">16/27</span></div></td>
+                              </tr>
+                              <tr>
+                                <td><a href="#" class="top-failing-card__link">iPhone 13 Pro Max landscape</a></td>
+                                <td><span class="top-failing-card__browser">WebKit</span></td>
+                                <td><span class="top-failing-card__os">MacOS</span></td>
+                                <td><span class="top-failing-card__pct">30%</span></td>
+                                <td><div class="top-failing-card__cases-cell"><div class="top-failing-card__progress"><span class="top-failing-card__progress-fill" style="width: 30%"></span></div><span class="top-failing-card__cases-text">9/27</span></div></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem Space -->
+      <section class="case-section section">
+        <h2 class="case-heading">Problem Space</h2>
+        <div class="case-problem-cols">
+          <div class="case-problem-col">
+            <h3 class="case-subheading"><i data-lucide="users" class="impact-title-icon" aria-hidden="true"></i>The user problem</h3>
+            <p>Playwright’s open-source tool works well for single test runs, but breaks down at scale:</p>
+            <ul>
+              <li>Teams must rerun tests across browsers, OSs, and time</li>
+              <li>Developers struggle to spot trends, not just individual failures</li>
+              <li>Dashboards surface artifacts but lack orientation and synthesis</li>
+              <li>Test data is hierarchical, but the hierarchy is hard to navigate</li>
+            </ul>
+          </div>
+          <div class="case-problem-col">
+            <h3 class="case-subheading"><i data-lucide="lightbulb" class="impact-title-icon" aria-hidden="true"></i>The design challenge</h3>
+            <p>Design a new paid product that:</p>
+            <ul>
+              <li>Handles large volumes of test artifacts</li>
+              <li>Helps users answer: “Is my app getting better or worse?”</li>
+              <li>Works within uncertain branding constraints</li>
+              <li>Serves power users without overwhelming them</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-media-block">
+        <div class="case-image-gallery" id="problem-context-gallery" role="group" aria-label="Playwright test report — problem context" aria-describedby="problem-context-gallery-caption">
+          <button type="button" class="case-image-gallery__item js-problem-context-open" data-full-src="assets/Playwright_service_-_106-b016f45a-34c9-4934-8664-e11e2012d5fb.png" aria-label="Open full size: test report — suite list">
+            <span class="case-image-gallery__frame">
+              <img src="assets/Playwright_service_-_106-b016f45a-34c9-4934-8664-e11e2012d5fb.png" alt="Playwright test report showing suite list with filters" width="2732" height="1536" loading="lazy" decoding="async">
+            </span>
+          </button>
+          <button type="button" class="case-image-gallery__item js-problem-context-open" data-full-src="assets/Playwright_service_-_107-3b776468-8944-4fee-8b2e-69480e4c2b5d.png" aria-label="Open full size: test report — expanded suite with pass and fail">
+            <span class="case-image-gallery__frame">
+              <img src="assets/Playwright_service_-_107-3b776468-8944-4fee-8b2e-69480e4c2b5d.png" alt="Playwright test report with expanded suite and environment tags" width="2732" height="1536" loading="lazy" decoding="async">
+            </span>
+          </button>
+          <button type="button" class="case-image-gallery__item js-problem-context-open" data-full-src="assets/Playwright_service_-_108-27f78e16-4f3c-4941-b9fb-9e38e49117d4.png" aria-label="Open full size: test report — test detail with steps and screenshot">
+            <span class="case-image-gallery__frame">
+              <img src="assets/Playwright_service_-_108-27f78e16-4f3c-4941-b9fb-9e38e49117d4.png" alt="Playwright test report — basic test detail, steps, and screenshot" width="2732" height="1536" loading="lazy" decoding="async">
+            </span>
+          </button>
+        </div>
+        <p class="case-image-gallery__caption case-status-label--reject" id="problem-context-gallery-caption"><span class="case-image-gallery__caption-text case-caption-with-status"><i data-lucide="circle-x" class="case-ds-exploration__status-icon" aria-hidden="true"></i><span>Original design from the open-source Playwright, which lacks navigation and doesn’t scale well.</span></span> <a href="https://www.figma.com/proto/w2X3f2LQ7EerPJPK7Pvtxz/Presentation-prototypes?page-id=0%3A1&node-id=1-18027&starting-point-node-id=1%3A18027&scaling=contain&content-scaling=fixed&t=Dx6AcwqvKxk1lwbc-1" class="ia-guide-view-full" target="_blank" rel="noopener noreferrer" aria-label="View prototype"><i data-lucide="expand" class="ia-guide-view-full-icon" aria-hidden="true"></i>View prototype</a></p>
+        <div class="case-image-lightbox js-problem-context-lightbox" id="problem-context-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image full size">
+          <div class="case-image-lightbox__backdrop js-problem-context-lightbox-close" tabindex="-1"></div>
+          <button type="button" class="case-image-lightbox__close js-problem-context-lightbox-close" aria-label="Close">×</button>
+          <div class="case-image-lightbox__inner">
+            <img class="case-image-lightbox__img js-problem-context-lightbox-img" src="" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. Design System -->
+      <section class="case-section section">
+        <h3 class="case-heading case-heading-h3">1. Defining the Design System &amp; Brand Direction</h3>
+        <p class="case-prose-60vw">Early on, the team needed a hero flow for leadership review — before brand decisions were finalized. I explored three possible design systems: <strong>Microsoft Fluent</strong>, <strong>GitHub</strong>, and <strong>Azure</strong>. Rather than debating brand preference, <span class="marker-highlight">I evaluated the design systems through information architecture fit</span>:</p>
+        <div class="case-cols-2">
+          <div class="case-cols-2__col">
+            <p><strong>Key tradeoffs I analyzed</strong></p>
+            <ul>
+              <li>Navigation paradigms (breadcrumb-heavy vs side-nav)</li>
+              <li>Ability to scale complex hierarchies</li>
+              <li>Native data-visualization support</li>
+              <li>Long-term flexibility for a data-dense product</li>
+            </ul>
+          </div>
+          <div class="case-cols-2__col">
+            <p><strong>Decision</strong></p>
+            <p>I recommended Microsoft Fluent because:</p>
+            <ul>
+              <li>Side navigation supports context switching across artifacts</li>
+              <li>Breadcrumbs complement deep hierarchies</li>
+              <li>Data-viz components reduce performance and branding risks</li>
+              <li>Better alignment with future product expansion</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-media-block">
+        <div class="case-ds-exploration" role="group" aria-label="Design system explorations">
+          <figure class="case-ds-exploration__figure">
+            <button type="button" class="case-ds-exploration__open js-problem-context-open" data-full-src="assets/GitHub-2c41b595-c371-4bd1-80d8-b178d57874ef.png" aria-label="Open full size: GitHub Design System exploration">
+              <img class="case-ds-exploration__img" src="assets/GitHub-2c41b595-c371-4bd1-80d8-b178d57874ef.png" alt="GitHub-inspired project header explorations — breadcrumbs and horizontal tabs beside the legacy Playwright top navigation." width="1850" height="1684" loading="lazy" decoding="async">
+            </button>
+            <figcaption class="case-ds-exploration__caption case-ds-exploration__caption--reject">
+              <i data-lucide="circle-x" class="case-ds-exploration__status-icon" aria-hidden="true"></i>
+              <span>GitHub Design System: Breadcrumb-driven nav</span>
+            </figcaption>
+          </figure>
+          <figure class="case-ds-exploration__figure">
+            <button type="button" class="case-ds-exploration__open js-problem-context-open" data-full-src="assets/Fluent-a2edd3af-7ba8-4e77-acab-574d43b67699.png" aria-label="Open full size: Fluent Design System exploration">
+              <img class="case-ds-exploration__img" src="assets/Fluent-a2edd3af-7ba8-4e77-acab-574d43b67699.png" alt="Fluent UI explorations — project nav, icon sidebars, left navigation variants, and documentation tree navigation." width="2958" height="1708" loading="lazy" decoding="async">
+            </button>
+            <figcaption class="case-ds-exploration__caption case-ds-exploration__caption--pick">
+              <i data-lucide="circle-check" class="case-ds-exploration__status-icon" aria-hidden="true"></i>
+              <span>Fluent Design System: Side navigation</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- 2. IA -->
+      <section class="case-section section">
+        <h3 class="case-heading case-heading-h3">2. Untangling a Complex Information Architecture</h3>
+        <p class="case-prose-60vw">As design progressed, the biggest friction wasn’t UI — it was language. Terms like <em>test</em>, <em>run</em>, <em>case</em>, <em>step</em> were used inconsistently in project syncs and documentations, <span class="marker-highlight">slowing collaboration and increasing user confusion</span>.</p>
+        <div class="case-ia-with-diagram">
+          <div class="case-ia-with-diagram__text">
+            <p><strong>What I did</strong></p>
+            <ul>
+              <li>Partnered early with Content Design</li>
+              <li>Anticipated frequent naming changes</li>
+              <li>Created an internal IA coding system (e.g. 03-C, 04-A)</li>
+            </ul>
+            <p>These stable identifiers became: <span class="marker-highlight">the source of truth across design, specs, and engineering</span>; the naming system for icons, components, and mockups; and a shared mental model for cross-discipline communication. This drastically reduced ambiguity and sped up iteration.</p>
+          </div>
+          <div class="case-ia-with-diagram__viz">
+            <div class="case-ia-diagram js-case-ia-diagram" id="case-ia-diagram" data-ia-view="original">
+              <div class="case-ia-diagram__stage">
+                <div class="case-ia-diagram__canvas">
+                  <div
+                    class="case-ia-pills-cloud"
+                    id="case-ia-pills-cloud"
+                    role="img"
+                    aria-label="Product language before alignment — overlapping terms shown as scattered labels"
+                  >
+                    <div class="case-ia-hierarchy-foot" aria-hidden="true">
+                      <div class="case-ia-hierarchy-foot__groups">
+                        <div class="case-ia-hierarchy-group case-ia-hierarchy-group--wide">
+                          <span class="case-ia-hierarchy-group__label">New levels to be added in the hierarchy</span>
+                          <div class="case-ia-hierarchy-group__bracket" aria-hidden="true"></div>
+                        </div>
+                        <div class="case-ia-hierarchy-group case-ia-hierarchy-group--narrow">
+                          <span class="case-ia-hierarchy-group__label">From open-source</span>
+                          <div class="case-ia-hierarchy-group__bracket" aria-hidden="true"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="extra">Account</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="extra">Test</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="extra">Organization</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="extra">Test code</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="extra">Project</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="core">Dashboard</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="extra">Test step</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="core">Global setting</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="core">Workspace</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="extra">Application</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="core">Test case</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="core">Test run</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="extra">Test suite</span>
+                    <span class="ia-main-pill case-ia-pills-cloud__pill" data-case-ia="extra">Test group</span>
+                  </div>
+                </div>
+              </div>
+              <div class="case-ia-diagram__toolbar dataviz-row">
+                <span class="dataviz-label">View:</span>
+                <div class="dataviz-tabs case-ia-diagram__tabs" role="tablist" aria-label="IA naming diagram views">
+                  <span class="dataviz-tab-slider case-ia-diagram__tab-slider" aria-hidden="true"></span>
+                  <button type="button" class="dataviz-tab case-ia-diagram__tab dataviz-tab--active case-status-label--reject" role="tab" data-ia-view="original" aria-selected="true"><i data-lucide="circle-x" class="case-ds-exploration__status-icon" aria-hidden="true"></i>Original concepts from PMs</button>
+                  <button type="button" class="dataviz-tab case-ia-diagram__tab case-status-label--pick" role="tab" data-ia-view="hierarchy" aria-selected="false"><i data-lucide="circle-check" class="case-ds-exploration__status-icon" aria-hidden="true"></i>Establishing hierarchy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Navigation -->
+      <section class="case-section section">
+        <h3 class="case-heading case-heading-h3">3. Navigation Driven by Real User Jobs</h3>
+        <p>With a multi-level hierarchy and only one primary navigation surface, a key question emerged: <span class="marker-highlight">What belongs in the main nav</span>? I ran quick usability studies with existing Playwright users using lightweight prototypes.</p>
+        <div class="case-ia-with-diagram">
+          <div class="case-ia-with-diagram__text">
+            <p><strong>What I assumed</strong><br>Users would want to switch frequently between test runs to compare results.</p>
+            <p><strong>What I learned</strong><br><span class="marker-highlight">Users actually think in terms of projects: they manage many projects in parallel</span>, they want high-level health signals per project, and manual comparison across runs feels like busywork.</p>
+            <p><strong>Design decision</strong></p>
+            <ul>
+              <li>Main navigation = Projects</li>
+              <li>Breadcrumbs = lower-level context and orientation</li>
+              <li>Consistent “Insights” section at each level</li>
+            </ul>
+            <p>This structure helped users stay oriented while moving quickly through a deep hierarchy.</p>
+          </div>
+          <div class="case-ia-with-diagram__viz">
+            <div
+              class="case-ia-diagram case-ia-diagram--static-hierarchy-block js-case-static-hierarchy-diagram"
+              data-side-nav-level="project"
+            >
+              <div class="case-ia-diagram__stage">
+                <div class="case-ia-diagram__canvas case-ia-diagram__canvas--static-hierarchy">
+                  <nav
+                    class="case-ia-hierarchy-static"
+                    aria-label="Information architecture chain: Organization, Team, Project, Test run, Test case"
+                  >
+                    <span class="ia-main-pill case-ia-hierarchy-static__pill">Organization</span>
+                    <span class="case-ia-hierarchy-sep" aria-hidden="true">›</span>
+                    <span class="ia-main-pill case-ia-hierarchy-static__pill">Team</span>
+                    <span class="case-ia-hierarchy-sep" aria-hidden="true">›</span>
+                    <span class="ia-main-pill case-ia-hierarchy-static__pill">Project</span>
+                    <span class="case-ia-hierarchy-sep" aria-hidden="true">›</span>
+                    <span class="ia-main-pill case-ia-hierarchy-static__pill">Test run</span>
+                    <span class="case-ia-hierarchy-sep" aria-hidden="true">›</span>
+                    <span class="ia-main-pill case-ia-hierarchy-static__pill">Test case</span>
+                    <div class="case-ia-hierarchy-static__bracket" aria-hidden="true">
+                      <div class="case-ia-hierarchy-static__bracket__cap"></div>
+                      <span class="case-ia-hierarchy-static__bracket__label">Side nav</span>
+                    </div>
+                    <div class="case-ia-hierarchy-static__bracket" aria-hidden="true">
+                      <div class="case-ia-hierarchy-static__bracket__cap"></div>
+                      <span class="case-ia-hierarchy-static__bracket__label">Breadcrumb</span>
+                    </div>
+                  </nav>
+                  <div class="case-ia-diagram__canvas-screenshot">
+                    <button
+                      type="button"
+                      class="case-ia-diagram__screenshot-trigger js-case-ia-static-screenshot-open"
+                      aria-haspopup="dialog"
+                      aria-expanded="false"
+                      aria-controls="case-ia-static-screenshot-lightbox"
+                      aria-label="Open enlarged screenshot: project-level dashboard view"
+                    >
+                      <span class="case-ia-diagram__screenshot-layers">
+                        <img
+                          class="case-ia-diagram__screenshot-layer js-case-static-screenshot-layer is-active"
+                          data-static-screenshot-level="project"
+                          src="assets/ms-playwright-project-level.png"
+                          alt="Microsoft Playwright Testing — Employee Portal project dashboard with Project selected in the side navigation"
+                          width="1024"
+                          height="575"
+                          loading="eager"
+                          decoding="async"
+                        />
+                        <img
+                          class="case-ia-diagram__screenshot-layer js-case-static-screenshot-layer"
+                          data-static-screenshot-level="test-run"
+                          src="assets/ms-playwright-test-run-level.png"
+                          alt="Microsoft Playwright Testing — test run detail for testRunID_001 with Test run selected in the side navigation"
+                          width="1024"
+                          height="575"
+                          loading="eager"
+                          decoding="async"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="case-ia-diagram__toolbar dataviz-row">
+                <span class="dataviz-label" id="case-static-side-nav-label">Side navigation on:</span>
+                <div
+                  class="dataviz-tabs case-ia-diagram__tabs js-case-static-side-nav-tabs"
+                  role="radiogroup"
+                  aria-labelledby="case-static-side-nav-label"
+                >
+                  <span class="dataviz-tab-slider case-ia-diagram__tab-slider" aria-hidden="true"></span>
+                  <button
+                    type="button"
+                    class="dataviz-tab case-ia-diagram__tab js-case-static-side-nav-option dataviz-tab--active"
+                    role="radio"
+                    aria-checked="true"
+                    tabindex="0"
+                    data-side-nav-level="project"
+                  >
+                    Project level
+                  </button>
+                  <button
+                    type="button"
+                    class="dataviz-tab case-ia-diagram__tab js-case-static-side-nav-option"
+                    role="radio"
+                    aria-checked="false"
+                    tabindex="-1"
+                    data-side-nav-level="test-run"
+                  >
+                    Test run level
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="case-static-screenshot-lightbox js-case-static-screenshot-lightbox"
+              id="case-ia-static-screenshot-lightbox"
+              aria-hidden="true"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Screenshot — enlarged view"
+            >
+              <div class="case-static-screenshot-lightbox__backdrop js-case-static-screenshot-lightbox-close" tabindex="-1"></div>
+              <button type="button" class="case-static-screenshot-lightbox__close js-case-static-screenshot-lightbox-close" aria-label="Close">×</button>
+              <div class="case-static-screenshot-lightbox__inner">
+                <img class="case-static-screenshot-lightbox__img js-case-static-screenshot-lightbox-img" src="" alt="" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Insights -->
+      <section class="case-section section case-section--insight">
+        <h3 class="case-heading case-heading-h3">4. Designing for Insight, Not Just Data</h3>
+        <p>A key outcome of research was <span class="marker-highlight">the need for trend visibility without mental math</span>.</p>
+        <p>I introduced an Insights section at the project level: pass/fail rate trends, execution speed changes, and signals that prompt deeper investigation. This pattern repeats across levels, creating predictability and reducing cognitive load.</p>
+      </section>
+
+      <div class="case-media-block">
+        <div class="case-insight-stack" role="group" aria-label="Insights section — before and after">
+          <figure
+            class="case-insight-stack__figure case-insight-new js-case-insight-new"
+            data-insight-view="dashboard"
+          >
+            <figcaption class="case-insight-stack__caption case-insight-new__caption case-status-label--pick case-caption-with-status">
+              <i data-lucide="circle-check" class="case-ds-exploration__status-icon" aria-hidden="true"></i>
+              <span class="case-insight-new__caption-text"
+                ><strong>New design</strong> — Pass/fail and speed trends read at a glance, and the layout shortens the path when you need to troubleshoot a failing run.</span>
+            </figcaption>
+            <div class="case-insight-new__viewport">
+              <div class="case-insight-new__layers">
+                <img
+                  class="case-insight-new__layer js-case-insight-new-layer is-active"
+                  data-insight-level="dashboard"
+                  src="assets/insight-new-dashboard-level.png"
+                  alt="New Insights design at dashboard level — aggregated pass rate trend, OS distribution, execution speed, and recent run list (last 50 runs) for at-a-glance health."
+                  width="3264"
+                  height="688"
+                  loading="eager"
+                  decoding="async"
+                  aria-hidden="false"
+                />
+                <img
+                  class="case-insight-new__layer js-case-insight-new-layer"
+                  data-insight-level="test-run"
+                  src="assets/insight-new-test-run-level.png"
+                  alt="New Insights design at test run level — five insight cards: test run summary, top failing browsers, operating systems, platforms, and projects."
+                  width="3264"
+                  height="688"
+                  loading="eager"
+                  decoding="async"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <div class="dataviz-row case-insight-new__toolbar">
+              <span class="dataviz-label" id="case-insight-view-label">Insights view:</span>
+              <div
+                class="dataviz-tabs case-ia-diagram__tabs js-case-insight-new-tabs"
+                role="radiogroup"
+                aria-labelledby="case-insight-view-label"
+              >
+                <span class="dataviz-tab-slider case-ia-diagram__tab-slider" aria-hidden="true"></span>
+                <button
+                  type="button"
+                  class="dataviz-tab case-ia-diagram__tab js-case-insight-new-option dataviz-tab--active"
+                  role="radio"
+                  aria-checked="true"
+                  tabindex="0"
+                  data-insight-view="dashboard"
+                >
+                  Dashboard level
+                </button>
+                <button
+                  type="button"
+                  class="dataviz-tab case-ia-diagram__tab js-case-insight-new-option"
+                  role="radio"
+                  aria-checked="false"
+                  tabindex="-1"
+                  data-insight-view="test-run"
+                >
+                  Test run level
+                </button>
+              </div>
+            </div>
+          </figure>
+          <figure class="case-insight-stack__figure">
+            <figcaption class="case-insight-stack__caption case-status-label--reject case-caption-with-status">
+              <i data-lucide="circle-x" class="case-ds-exploration__status-icon" aria-hidden="true"></i>
+              <span><strong>Previous design (Open-source)</strong> — Trends were hard to spot, and the color choices felt confusing and inconsistent.</span>
+            </figcaption>
+            <img
+              class="case-insight-stack__img"
+              src="assets/insight-dashboard-old.png"
+              alt="Previous Insights design — five separate Dashboard insight cards summarizing pass rate, flaky tests, failed tests, duration, and run volume in a horizontal row."
+              width="3084"
+              height="848"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </div>
+
+      <!-- 5. Test Case History -->
+      <section class="case-section section">
+        <h3 class="case-heading case-heading-h3">5. A Micro-Decision with Macro Impact: Test Case History</h3>
+        <p>One of the most debated designs was <strong>Test Case History</strong> — a time series of test outcomes.</p>
+        <div class="case-cols-2">
+          <div class="case-cols-2__col">
+            <p><strong>Constraints</strong></p>
+            <ul>
+              <li>Discrete status values (pass / fail / flaky)</li>
+              <li>Dense layouts (hundreds of items on screen)</li>
+              <li>Accessibility considerations</li>
+              <li>Drill-down affordances</li>
+            </ul>
+          </div>
+          <div class="case-cols-2__col">
+            <p><strong>Final solution</strong></p>
+            <ul>
+              <li>Status icons as a row</li>
+              <li>Latest run emphasized</li>
+              <li>Older runs rendered in monoline style</li>
+              <li>Reduced visual noise while preserving recognizability</li>
+            </ul>
+          </div>
+        </div>
+        <p>Testing showed users could immediately identify: the latest result, historical patterns, and entry points for deeper inspection. It’s not perfect — and I explicitly documented tradeoffs — but it’s usable, scalable, and honest about constraints.</p>
+      </section>
+
+      <div class="case-media-block section" aria-label="Top failing test cases — Fluent UI React v9 demo">
+        <div class="case-fluent-widget-stack" data-selected-iteration="Final design">
+          <div id="fluent-micro-widget-root"></div>
+          <div class="dataviz-row case-ia-diagram__toolbar">
+            <span class="dataviz-label" id="case-fluent-widget-iteration-label">Iteration</span>
+            <div class="dataviz-combobox" data-iteration-combobox>
+              <button
+                type="button"
+                class="dataviz-select dataviz-select--tablike dataviz-combobox__trigger"
+                id="case-fluent-widget-iteration-select"
+                aria-labelledby="case-fluent-widget-iteration-label"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="case-fluent-widget-iteration-listbox"
+              >
+                <span class="dataviz-combobox__label case-caption-with-status case-status-label--pick"><i data-lucide="circle-check" class="case-ds-exploration__status-icon case-iteration-trigger-icon" aria-hidden="true"></i><span class="dataviz-combobox__label-text">Final design</span></span>
+              </button>
+              <div
+                id="case-fluent-widget-iteration-listbox"
+                class="dataviz-combobox__listbox"
+                role="listbox"
+                aria-labelledby="case-fluent-widget-iteration-label"
+                hidden
+              >
+                <button type="button" class="dataviz-combobox__option case-status-label--reject case-caption-with-status" role="option" data-value="Iteration 1" aria-selected="false"><i data-lucide="circle-x" class="case-ds-exploration__status-icon" aria-hidden="true"></i><span>Iteration 1</span></button>
+                <button type="button" class="dataviz-combobox__option case-status-label--reject case-caption-with-status" role="option" data-value="Iteration 2" aria-selected="false"><i data-lucide="circle-x" class="case-ds-exploration__status-icon" aria-hidden="true"></i><span>Iteration 2</span></button>
+                <button type="button" class="dataviz-combobox__option case-status-label--reject case-caption-with-status" role="option" data-value="Iteration 3" aria-selected="false"><i data-lucide="circle-x" class="case-ds-exploration__status-icon" aria-hidden="true"></i><span>Iteration 3</span></button>
+                <button type="button" class="dataviz-combobox__option case-status-label--reject case-caption-with-status" role="option" data-value="Iteration 4" aria-selected="false"><i data-lucide="circle-x" class="case-ds-exploration__status-icon" aria-hidden="true"></i><span>Iteration 4</span></button>
+                <button type="button" class="dataviz-combobox__option case-status-label--reject case-caption-with-status" role="option" data-value="Iteration 5" aria-selected="false"><i data-lucide="circle-x" class="case-ds-exploration__status-icon" aria-hidden="true"></i><span>Iteration 5</span></button>
+                <button type="button" class="dataviz-combobox__option case-status-label--pick case-caption-with-status" role="option" data-value="Final design" aria-selected="true"><i data-lucide="circle-check" class="case-ds-exploration__status-icon" aria-hidden="true"></i><span>Final design</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="module" src="assets/fluent-micro-widget/fluent-micro-widget.js"></script>
+      </div>
+
+      <!-- Reflection -->
+      <section class="case-section section">
+        <h2 class="case-heading">Reflection</h2>
+        <h3 class="case-heading case-heading-h3"><i data-lucide="activity" class="impact-title-icon" aria-hidden="true"></i>Static prototypes fall short for data-intensive products</h3>
+        <p>Without real data, it's difficult to surface usability issues that only emerge under realistic conditions. For products like Playwright, I've learned to be cautious about insights drawn solely from prototype testing — and to push for working prototypes or real-world validation earlier in the process.</p>
+        <h3 class="case-heading case-heading-h3"><i data-lucide="list-tree" class="impact-title-icon" aria-hidden="true"></i>Info architecture first</h3>
+        <p>When the team isn't aligned on terminology, jumping straight into design only creates friction down the line. For a product as complex as Playwright, I learned to take a step back and establish the information architecture first — building shared vocabulary before touching the UI. It kept collaboration efficient and prevented the kind of structural confusion that frustrates users.</p>
+        <h3 class="case-heading case-heading-h3"><i data-lucide="eye" class="impact-title-icon" aria-hidden="true"></i>Beware of visual fatigue &amp; a11y</h3>
+        <p>Playwright relies heavily on color to communicate status and insights. Accessibility is the baseline — but for a dashboard where users need to process large amounts of data at a glance, designing against visual fatigue is just as critical. The test history view taught me that even a technically accessible design can still overwhelm, and that's a bar worth raising.</p>
+      </section>
+
+      <section class="case-section section case-section-last">
+      </section>
+
+      <div class="case-section section">
+        <a href="index.html#work" class="link-arrow">Back to Selected work</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Wei-Hung Hsieh</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="script.js"></script>
+  <script>if (typeof lucide !== 'undefined') lucide.createIcons();</script>
+</body>
+</html>

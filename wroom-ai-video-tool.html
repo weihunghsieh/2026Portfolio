@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wroom AI Film Production Tool — Wei-Hung Hsieh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">Wei-Hung Hsieh</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#education">Education</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="theme-toggle-icon" aria-hidden="true"></span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="case-study">
+    <article class="case-article">
+      <!-- Hero -->
+      <header class="case-hero section">
+        <p class="case-eyebrow">Wroom.ai</p>
+        <h1 class="case-title">Wroom AI Film Production Tool</h1>
+        <p class="case-tagline">Translating complex LoRA-based video model training into a clear, filmmaker-native workflow for AI video generation.</p>
+        <div class="case-meta case-meta-cols">
+          <div class="case-meta-overview">
+            <p><strong>Project Overview</strong></p>
+            <p>Wroom.ai is a film production tool that gives filmmakers full creative control over AI video generation through custom LoRA training and scene-based composition.</p>
+            <p>As the sole designer, I led the product from zero to one — translating complex model customization technology (LoRA-based adapter training) into a three-phase workflow filmmakers already understand: Adapter Training, Scenegraph Composition, and Video Output.</p>
+          </div>
+          <div class="case-meta-status">
+            <p><strong>Team</strong></p>
+            <ul class="case-meta-team">
+              <li>UX Designer (Me)</li>
+              <li>AI / ML Engineer</li>
+              <li>Product Manager</li>
+            </ul>
+            <p class="case-meta-status-block"><strong>Project status</strong></p>
+            <p>In engineering development. (Content approved for portfolio use.)</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="case-media-block case-media-hero wroom-hero-media-block">
+        <div class="wroom-hero-carousel" id="wroom-hero-carousel">
+          <div class="wroom-hero-media__frame">
+            <div class="wroom-hero-carousel__panels">
+              <video id="wroom-hero-panel-adapter" class="wroom-hero-media__video case-hero-video wroom-hero-carousel__video wroom-hero-carousel__video--active" data-wroom-video="adapter" src="assets/wroom/adapter.mp4" muted playsinline preload="auto" aria-label="Adapter training"></video>
+              <video id="wroom-hero-panel-augment" class="wroom-hero-media__video case-hero-video wroom-hero-carousel__video" data-wroom-video="augment" src="assets/wroom/augment.mp4" muted playsinline preload="auto" hidden aria-label="Asset augmentation"></video>
+              <video id="wroom-hero-panel-scenegraph" class="wroom-hero-media__video case-hero-video wroom-hero-carousel__video" data-wroom-video="scenegraph" src="assets/wroom/scenegraph.mp4" muted playsinline preload="auto" hidden aria-label="Scenegraph"></video>
+              <video id="wroom-hero-panel-shot-exporting" class="wroom-hero-media__video case-hero-video wroom-hero-carousel__video" data-wroom-video="shot-exporting" src="assets/wroom/shot-gallery.mp4" muted playsinline preload="auto" hidden aria-label="Video exporting"></video>
+            </div>
+          </div>
+          <div class="wroom-hero-carousel__toolbar">
+            <div class="wroom-hero-carousel__tabs dataviz-tabs" role="tablist" aria-label="Product demo views">
+              <span class="dataviz-tab-slider" aria-hidden="true"></span>
+              <button type="button" class="dataviz-tab dataviz-tab--active" role="tab" id="wroom-hero-tab-adapter" data-wroom-hero="adapter" aria-selected="true" aria-controls="wroom-hero-panel-adapter">Adapter training</button>
+              <button type="button" class="dataviz-tab" role="tab" id="wroom-hero-tab-augment" data-wroom-hero="augment" aria-selected="false" aria-controls="wroom-hero-panel-augment">Asset augmentation</button>
+              <button type="button" class="dataviz-tab" role="tab" id="wroom-hero-tab-scenegraph" data-wroom-hero="scenegraph" aria-selected="false" aria-controls="wroom-hero-panel-scenegraph">Scenegraph</button>
+              <button type="button" class="dataviz-tab" role="tab" id="wroom-hero-tab-shot-exporting" data-wroom-hero="shot-exporting" aria-selected="false" aria-controls="wroom-hero-panel-shot-exporting">Video exporting</button>
+            </div>
+            <a href="https://www.figma.com/proto/ElZeDesw4VvQl3SL8YQAWO/Wroom-AI-Video-Model-Tool-2026?page-id=148%3A4657&amp;node-id=2233-62972&amp;p=f&amp;viewport=-4225%2C-2635%2C0.14&amp;t=n8JSiU71FvB6A7n7-1&amp;scaling=contain&amp;content-scaling=fixed&amp;starting-point-node-id=2233%3A62972" class="wroom-hero-prototype-link ia-guide-view-full" target="_blank" rel="noopener noreferrer" aria-label="View Figma prototype"><i data-lucide="expand" class="ia-guide-view-full-icon" aria-hidden="true"></i>View Figma prototype</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Problem -->
+      <div class="case-callout section">
+        <p class="case-callout__content">Professional filmmakers want creative control, not just AI-generated visuals — but existing tools demand a level of technical expertise that puts that control out of reach.</p>
+      </div>
+
+      <section class="case-section section">
+        <p><strong>Key challenges filmmakers face when using generative AI tools today:</strong></p>
+        <div class="wroom-challenge-grid" role="list">
+          <article class="wroom-challenge-tile" role="listitem">
+            <h3 class="wroom-challenge-tile__title"><i data-lucide="clapperboard" class="impact-title-icon" aria-hidden="true"></i>No consistency across video generations</h3>
+            <p class="wroom-challenge-tile__text">General-purpose video models like Veo produce visually impressive results, but offer <span class="marker-highlight">no reliable way to maintain character and design consistency across generations</span> — even minor changes in prompt or model settings can break visual coherence, forcing filmmakers to restart from scratch.</p>
+          </article>
+          <article class="wroom-challenge-tile" role="listitem">
+            <h3 class="wroom-challenge-tile__title"><i data-lucide="shield-alert" class="impact-title-icon" aria-hidden="true"></i>Filmmakers don't trust big tech with their IP</h3>
+            <p class="wroom-challenge-tile__text">Filmmakers are <span class="marker-highlight">reluctant to expose proprietary IP to foundation model providers</span> as training data. In an industry where scripts, character designs, and visual assets are core competitive advantages, the risk is simply too high.</p>
+          </article>
+          <article class="wroom-challenge-tile" role="listitem">
+            <h3 class="wroom-challenge-tile__title"><i data-lucide="wrench" class="impact-title-icon" aria-hidden="true"></i>LoRA is powerful but inaccessible</h3>
+            <p class="wroom-challenge-tile__text">LoRA (Low-Rank Adaptation) is a fine-tuning technique that gives filmmakers precise control over character and visual consistency — but <span class="marker-highlight">the workflow assumes a coding background</span>, putting it out of reach for directors, concept artists, and cinematographers.</p>
+          </article>
+          <article class="wroom-challenge-tile" role="listitem">
+            <h3 class="wroom-challenge-tile__title"><i data-lucide="layers" class="impact-title-icon" aria-hidden="true"></i>Tools don't scale to production complexity</h3>
+            <p class="wroom-challenge-tile__text">Existing LoRA training tools are not only too technical to use — <span class="marker-highlight">they weren't built to scale</span>. Managing multiple characters, props, and set designs across scenes requires manual workarounds that slow down creative momentum.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- The Solution -->
+      <div class="case-callout section">
+        <p class="case-callout__content">How might we give professional filmmakers the creative control of LoRA-based video generation — without exposing their IP or requiring any technical expertise?</p>
+      </div>
+
+      <!-- My Design Impact -->
+      <section class="case-section case-section--design-impact section">
+        <h2 class="case-heading">My Design Impact</h2>
+
+        <div class="impact-item impact-item--workflow-integration">
+          <div class="impact-item-content">
+            <h3 class="impact-item-title"><i data-lucide="git-merge" class="impact-title-icon" aria-hidden="true"></i>From scattered tools to one integrated workflow</h3>
+          </div>
+
+          <figure class="workflow-pipeline" aria-label="Comparison of fragmented AI filmmaker workflow versus Wroom's unified pipeline">
+            <!-- Before -->
+            <div class="workflow-pipeline__row workflow-pipeline__row--before">
+              <div class="workflow-pipeline__row-head">
+                <span class="workflow-pipeline__label">Before</span>
+              </div>
+
+              <div class="workflow-pipeline__before-body">
+              <div class="workflow-pipeline__before-col">
+                <p class="workflow-pipeline__sublabel">Today's AI video production runs across several disconnected workflows — each with its own tools, manual handoffs, and no shared context.</p>
+              <div class="workflow-chains-viewport js-workflow-chains-viewport" aria-label="Disconnected workflows, scrolling overview">
+              <div class="workflow-chains-track">
+              <div class="workflow-chains js-workflow-chains-set">
+                <div class="workflow-chain">
+                  <span class="workflow-chain__label"><span class="workflow-chain__num">1</span>Assets</span>
+                  <span class="workflow-chain__nodes">
+                    <span class="workflow-node">Google Drive</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Manual sort</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Label in spreadsheet</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Email to tech person</span>
+                  </span>
+                </div>
+
+                <div class="workflow-gap" aria-hidden="true"><span class="workflow-gap__label">Manual handoff</span></div>
+
+                <div class="workflow-chain">
+                  <span class="workflow-chain__label"><span class="workflow-chain__num">2</span>LoRA</span>
+                  <span class="workflow-chain__nodes">
+                    <span class="workflow-node">Kohya / AI Toolkit (local)</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Config in TOML/YAML</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Train &amp; wait (.safetensors)</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Log params in Notion</span>
+                  </span>
+                </div>
+
+                <div class="workflow-gap" aria-hidden="true"><span class="workflow-gap__label">Manual handoff</span></div>
+
+                <div class="workflow-chain">
+                  <span class="workflow-chain__label"><span class="workflow-chain__num">3</span>Check</span>
+                  <span class="workflow-chain__nodes">
+                    <span class="workflow-node">Run in ComfyUI</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Download &amp; share via Drive</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Director feedback via email</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Re-train manually</span>
+                  </span>
+                </div>
+
+                <div class="workflow-gap" aria-hidden="true"><span class="workflow-gap__label">Manual handoff</span></div>
+
+                <div class="workflow-chain">
+                  <span class="workflow-chain__label"><span class="workflow-chain__num">4</span>Combine</span>
+                  <span class="workflow-chain__nodes">
+                    <span class="workflow-node">Load LoRAs in ComfyUI node</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Tune weights by trial</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">No version history / presets</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Re-run from scratch each time</span>
+                  </span>
+                </div>
+
+                <div class="workflow-gap" aria-hidden="true"><span class="workflow-gap__label">Manual handoff</span></div>
+
+                <div class="workflow-chain">
+                  <span class="workflow-chain__label"><span class="workflow-chain__num">5</span>Export</span>
+                  <span class="workflow-chain__nodes">
+                    <span class="workflow-node">Run Runway or Kling</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Upscale in Topaz</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Rename &amp; organise manually</span>
+                    <span class="workflow-arrow" aria-hidden="true">↓</span>
+                    <span class="workflow-node">Upload to Drive / WeTransfer</span>
+                  </span>
+                </div>
+
+                <div class="workflow-gap workflow-gap--restart" aria-hidden="true"><span class="workflow-gap__label">Start over</span></div>
+              </div>
+              </div>
+              </div>
+              </div>
+
+              <div class="workflow-pipeline__image-wrap">
+                <button type="button" class="workflow-pipeline__image workflow-pipeline__image--button js-wroom-comfy-open" aria-label="View ComfyUI workflow image, full size">
+                  <img src="assets/wroom-comfyui-problem.png" alt="ComfyUI node-based LoRA training workflow with interconnected technical model nodes" width="1024" height="561" loading="lazy" decoding="async">
+                </button>
+                <span class="workflow-pipeline__image-caption">Existing adapter training tools like ComfyUI are built for engineers, not filmmakers.</span>
+              </div>
+              </div>
+
+            </div>
+
+            <!-- After -->
+            <div class="workflow-pipeline__row workflow-pipeline__row--after">
+              <div class="workflow-pipeline__row-head">
+                <span class="workflow-pipeline__label workflow-pipeline__label--accent">Wroom: Integrated 3-step workflow</span>
+              </div>
+
+              <div class="workflow-pipeline__after-body">
+                <div class="workflow-pipeline__after-col">
+                  <p class="workflow-pipeline__sublabel">Three primary nav tabs map directly to the three key phases of video generation: Adapter Training, Scenegraph Composition, and Video Output.</p>
+                </div>
+
+                <div class="wroom-ui-mock" aria-label="Wroom integrated workflow product mockup">
+                <img class="wroom-ui-mock__header" src="assets/wroom/ui/header.png" alt="Wroom global header">
+                <div class="wroom-ui-mock__body">
+                  <div class="wroom-ui-mock__nav">
+                    <span class="wroom-ui-mock__tile-wrap wroom-ui-mock__tile-wrap--adapter">
+                      <img class="wroom-ui-mock__tile wroom-ui-mock__tile--rest" src="assets/wroom/ui/1-selected.png" alt="Adapter tab — selected">
+                      <img class="wroom-ui-mock__tile wroom-ui-mock__tile--hover" src="assets/wroom/ui/1-selected-hover.png" alt="" aria-hidden="true">
+                    </span>
+                    <span class="wroom-ui-mock__tile-wrap wroom-ui-mock__tile-wrap--scene">
+                      <img class="wroom-ui-mock__tile wroom-ui-mock__tile--rest" src="assets/wroom/ui/2-rest.png" alt="Shot tab">
+                      <img class="wroom-ui-mock__tile wroom-ui-mock__tile--hover" src="assets/wroom/ui/2-hover.png" alt="" aria-hidden="true">
+                    </span>
+                    <span class="wroom-ui-mock__tile-wrap wroom-ui-mock__tile-wrap--shot">
+                      <img class="wroom-ui-mock__tile wroom-ui-mock__tile--rest" src="assets/wroom/ui/3-rest.png" alt="Scene tab">
+                      <img class="wroom-ui-mock__tile wroom-ui-mock__tile--hover" src="assets/wroom/ui/3-hover.png" alt="" aria-hidden="true">
+                    </span>
+                    <img class="wroom-ui-mock__tile wroom-ui-mock__tile--space" src="assets/wroom/ui/nav-space.png" alt="">
+                  </div>
+                  <div class="wroom-ui-mock__content">
+                    <div class="workflow-after workflow-after--vertical" aria-label="Wroom integrated 3-step workflow">
+                      <div class="workflow-after__stage workflow-after__stage--adapter">
+                        <div class="workflow-node workflow-node--solid">
+                          <span class="workflow-node__head">Adapter training</span>
+                          <span class="workflow-node__sub">Asset labeling / LoRA training / Eval &amp; iteration</span>
+                        </div>
+                      </div>
+                      <span class="workflow-arrow workflow-arrow--solid" aria-hidden="true">↓</span>
+                      <div class="workflow-after__stage workflow-after__stage--scene">
+                        <div class="workflow-node workflow-node--solid">
+                          <span class="workflow-node__head">Scenegraph composition</span>
+                          <span class="workflow-node__sub">LoRA combining / Eval &amp; iteration</span>
+                        </div>
+                      </div>
+                      <span class="workflow-arrow workflow-arrow--solid" aria-hidden="true">↓</span>
+                      <div class="workflow-after__stage workflow-after__stage--shot">
+                        <div class="workflow-node workflow-node--solid">
+                          <span class="workflow-node__head">Shot export</span>
+                          <span class="workflow-node__sub">Video format / Upscaling</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+            </div>
+          </figure>
+
+          <div class="image-lightbox" id="wroom-comfy-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="ComfyUI workflow image">
+            <div class="image-lightbox__backdrop js-wroom-comfy-close"></div>
+            <button type="button" class="image-lightbox__close js-wroom-comfy-close" aria-label="Close">×</button>
+            <img class="image-lightbox__img" src="assets/wroom-comfyui-problem.png" alt="ComfyUI node-based LoRA training workflow, enlarged">
+          </div>
+        </div>
+
+        <div class="impact-item impact-item--nav">
+          <div class="impact-item-thumbnail">
+            <div class="nav-thumbnail-wrapper">
+              <div class="wroom-layout-carousel" id="wroom-layout-carousel">
+                <div class="wroom-layout-carousel__panels">
+                  <div class="wroom-layout-carousel__panel wroom-layout-carousel__panel--active" id="wroom-layout-panel-adapter" data-wroom-layout="adapter" role="tabpanel" aria-labelledby="wroom-layout-tab-adapter">
+                    <div class="nav-thumbnail nav-thumbnail--composite wroom-workflow-diagram js-nav-thumbnail-dissolve" id="wroom-workflow-diagram" aria-label="Wroom layout workflow — Adapter">
+                      <div class="nav-thumbnail-row nav-thumbnail-row--top">
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark" style="background-color: var(--wroom-level-00);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">00 Global search &amp; settings</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/00-global.png" alt="" width="1920" height="56">
+                        </span>
+                      </div>
+                      <div class="nav-thumbnail-row nav-thumbnail-row--body wroom-workflow-diagram__body">
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 60; background-color: var(--wroom-level-01);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">01 Nav</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/01-main-nav.png" alt="" width="60" height="1024">
+                        </span>
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 304; background-color: var(--wroom-level-02);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">02<br>Adapter list</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/02-adapter-list.png" alt="" width="304" height="1024">
+                        </span>
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 760; background-color: var(--wroom-level-03);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">03<br>Adapter training</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/03-adapter-training.png" alt="" width="760" height="1024">
+                        </span>
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 796; background-color: var(--wroom-level-04);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">04<br>Video generation playground</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/04-playground.png" alt="" width="796" height="1024">
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="wroom-layout-carousel__panel" id="wroom-layout-panel-scene" data-wroom-layout="scene" role="tabpanel" aria-labelledby="wroom-layout-tab-scene" hidden>
+                    <div class="nav-thumbnail nav-thumbnail--composite wroom-workflow-diagram js-nav-thumbnail-dissolve" aria-label="Wroom layout workflow — Scene">
+                      <div class="nav-thumbnail-row nav-thumbnail-row--top">
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark" style="background-color: var(--wroom-level-00);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">00 Global search &amp; settings</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/00-global.png" alt="" width="1920" height="56">
+                        </span>
+                      </div>
+                      <div class="nav-thumbnail-row nav-thumbnail-row--body wroom-workflow-diagram__body">
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 60; background-color: var(--wroom-level-01);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">01 Nav</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/scene/01-nav.png" alt="" width="60" height="1024">
+                        </span>
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 304; background-color: var(--wroom-level-02);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">02<br>Scenegraph list</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/scene/02-scenegraph-list.png" alt="" width="304" height="1024">
+                        </span>
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 760; background-color: var(--wroom-level-03);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">03<br>Scenegraph composing</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/scene/03-scenegraph-composing.png" alt="" width="760" height="1024">
+                        </span>
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 796; background-color: var(--wroom-level-04);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">04<br>Video generation playground</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/scene/04-playground.png" alt="" width="796" height="1024">
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="wroom-layout-carousel__panel" id="wroom-layout-panel-shot" data-wroom-layout="shot" role="tabpanel" aria-labelledby="wroom-layout-tab-shot" hidden>
+                    <div class="nav-thumbnail nav-thumbnail--composite wroom-workflow-diagram wroom-workflow-diagram--shot js-nav-thumbnail-dissolve" aria-label="Wroom layout workflow — Shot">
+                      <div class="nav-thumbnail-row nav-thumbnail-row--top">
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark" style="background-color: var(--wroom-level-00);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">00 Global search &amp; settings</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/00-global.png" alt="" width="1920" height="56">
+                        </span>
+                      </div>
+                      <div class="nav-thumbnail-row nav-thumbnail-row--body wroom-workflow-diagram__body">
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 60; background-color: var(--wroom-level-01);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">01 Nav</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/shot/01-nav.png" alt="" width="60" height="1024">
+                        </span>
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 1568; background-color: var(--wroom-level-02);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">02<br>Shot gallery</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/shot/02-shot-gallery.png" alt="" width="1024" height="668">
+                        </span>
+                        <span class="nav-thumbnail-img-wrap nav-thumbnail-img-wrap--label-dark wroom-workflow-diagram__col" style="--wroom-col-flex: 292; background-color: var(--wroom-level-03);">
+                          <span class="nav-thumbnail-label" aria-hidden="true"><span class="nav-thumbnail-label__text">03<br>Shot export</span></span>
+                          <img class="nav-thumbnail-img" src="assets/wroom/workflow/shot/03-shot-export.png" alt="" width="292" height="1024">
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="wroom-layout-carousel__toolbar">
+                  <button type="button" class="ia-guide-view-full js-wroom-workflow-open" aria-label="View full diagram"><i data-lucide="expand" class="ia-guide-view-full-icon" aria-hidden="true"></i>View full diagram</button>
+                  <div class="wroom-layout-carousel__tabs dataviz-tabs" role="tablist" aria-label="Layout workflow views">
+                    <span class="dataviz-tab-slider" aria-hidden="true"></span>
+                    <button type="button" class="dataviz-tab dataviz-tab--active" role="tab" id="wroom-layout-tab-adapter" data-wroom-layout="adapter" aria-selected="true" aria-controls="wroom-layout-panel-adapter">Adapter</button>
+                    <button type="button" class="dataviz-tab" role="tab" id="wroom-layout-tab-scene" data-wroom-layout="scene" aria-selected="false" aria-controls="wroom-layout-panel-scene">Scene</button>
+                    <button type="button" class="dataviz-tab" role="tab" id="wroom-layout-tab-shot" data-wroom-layout="shot" aria-selected="false" aria-controls="wroom-layout-panel-shot">Shot</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ia-lightbox js-wroom-workflow-lightbox" id="wroom-workflow-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Wroom workflow diagram full view">
+              <div class="ia-lightbox__backdrop js-wroom-workflow-lightbox-close"></div>
+              <div class="ia-lightbox__content">
+                <button type="button" class="ia-lightbox__close js-wroom-workflow-lightbox-close" aria-label="Close">×</button>
+                <div class="ia-lightbox__body"></div>
+              </div>
+            </div>
+          </div>
+          <div class="impact-item-content">
+            <h3 class="impact-item-title"><i data-lucide="layout-list" class="impact-title-icon" aria-hidden="true"></i>Layout-driven workflow clarity</h3>
+            <ul>
+              <li><span class="marker-highlight">Each step in the main nav follows a clear left-to-right visual flow</span>, guiding filmmakers through the process without requiring prior technical knowledge.</li>
+              <li>Users can return to any earlier phase at any time to iterate on adapters or scenegraph — <span class="marker-highlight">encouraging an iterative workflow</span> that mirrors how creative teams refine and evolve their vision.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="impact-item impact-item--nav impact-item--feedback">
+          <div class="impact-item-content">
+            <h3 class="impact-item-title"><i data-lucide="refresh-cw" class="impact-title-icon" aria-hidden="true"></i>Closing the feedback loop</h3>
+            <ul>
+              <li>After each video generation, a <span class="marker-highlight">confidence level indicator</span> shows how well the adapter aligns with the generation prompt — a mechanism and backend change I introduced beyond the original product spec.</li>
+              <li>When confidence is low, the product encourages users to <span class="marker-highlight">augment their training assets with AI or upload new assets</span>, directly addressing the gap between creative intent and model output.</li>
+              <li>This creates a <span class="marker-highlight">structured feedback loop</span> that improves adapter quality over time, leading to more consistent video generation results.</li>
+            </ul>
+          </div>
+          <div class="impact-item-thumbnail">
+            <div class="wroom-hero-media__frame">
+              <video class="wroom-impact-video" src="assets/wroom/closing-feedback-loop.mp4" muted playsinline autoplay loop aria-label="Confidence feedback and asset augmentation"></video>
+            </div>
+            <button type="button" class="ia-guide-view-full js-wroom-feedback-open" aria-label="View full video"><i data-lucide="expand" class="ia-guide-view-full-icon" aria-hidden="true"></i>View full image</button>
+          </div>
+        </div>
+
+        <div class="image-lightbox" id="wroom-feedback-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Closing the feedback loop video, full size">
+          <div class="image-lightbox__backdrop js-wroom-feedback-close"></div>
+          <button type="button" class="image-lightbox__close js-wroom-feedback-close" aria-label="Close">×</button>
+          <video class="image-lightbox__img" src="assets/wroom/closing-feedback-loop.mp4" muted playsinline autoplay loop></video>
+        </div>
+
+        <div class="impact-item impact-item--design-system">
+          <div class="impact-item-content">
+            <h3 class="impact-item-title"><i data-lucide="grid-3x3" class="impact-title-icon" aria-hidden="true"></i>A design system built for professional-grade tools</h3>
+            <ul>
+              <li>shadcn/ui's default dark theme is built on pure black — <span class="marker-highlight">unsuitable for a video production tool</span>, where #000 is reserved for color grading to avoid visual interference.</li>
+              <li>I designed a <span class="marker-highlight">custom token system from scratch</span> to establish visual hierarchy and workflow, with a visual language closer to common non-linear video editing tools, while staying consistent with Wroom's brand color.</li>
+              <li>All purple UI elements — such as call-to-action buttons — <span class="marker-highlight">signal AI actions that consume compute resources</span>, giving users a clear and consistent visual cue for cost-incurring interactions.</li>
+            </ul>
+          </div>
+
+          <div class="ds-showcase" aria-label="Wroom design system showcase">
+            <div class="ds-showcase__column">
+            <!-- Colors -->
+            <section class="ds-showcase__group">
+              <header class="ds-showcase__header">
+                <span class="ds-showcase__eyebrow">01</span>
+                <h4 class="ds-showcase__title">Color tokens</h4>
+                <span class="ds-showcase__meta">42 tokens · dark theme</span>
+              </header>
+
+              <div class="ds-color-groups">
+                <div class="ds-color-group">
+                  <span class="ds-color-group__label">Background</span>
+                  <div class="ds-swatch-grid">
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#0C0F14"></span><span class="ds-swatch__name">BG-1</span><span class="ds-swatch__hex">#0C0F14</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#12161C"></span><span class="ds-swatch__name">BG-2</span><span class="ds-swatch__hex">#12161C</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#161A21"></span><span class="ds-swatch__name">BG-3</span><span class="ds-swatch__hex">#161A21</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#1A1923"></span><span class="ds-swatch__name">BG-3.5</span><span class="ds-swatch__hex">#1A1923</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#1E232C"></span><span class="ds-swatch__name">BG-4</span><span class="ds-swatch__hex">#1E232C</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#262C36"></span><span class="ds-swatch__name">BG-5</span><span class="ds-swatch__hex">#262C36</span></div>
+                  </div>
+                </div>
+
+                <div class="ds-color-group">
+                  <span class="ds-color-group__label">Text</span>
+                  <div class="ds-swatch-grid">
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#F2F3F7"></span><span class="ds-swatch__name">primary</span><span class="ds-swatch__hex">#F2F3F7</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#AEB3BC"></span><span class="ds-swatch__name">secondary</span><span class="ds-swatch__hex">#AEB3BC</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#5F6670"></span><span class="ds-swatch__name">disabled</span><span class="ds-swatch__hex">#5F6670</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#FFFFFF"></span><span class="ds-swatch__name">active</span><span class="ds-swatch__hex">#FFFFFF</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#0C0F14"></span><span class="ds-swatch__name">primary-inverse</span><span class="ds-swatch__hex">#0C0F14</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#A5C8FF"></span><span class="ds-swatch__name">hyperlink</span><span class="ds-swatch__hex">#A5C8FF</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#54E0B3"></span><span class="ds-swatch__name">success</span><span class="ds-swatch__hex">#54E0B3</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#FFD485"></span><span class="ds-swatch__name">warning</span><span class="ds-swatch__hex">#FFD485</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#FF7A82"></span><span class="ds-swatch__name">error</span><span class="ds-swatch__hex">#FF7A82</span></div>
+                  </div>
+                </div>
+
+                <div class="ds-color-group">
+                  <span class="ds-color-group__label">Brand · purple = AI compute</span>
+                  <div class="ds-swatch-grid">
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#5832E0"></span><span class="ds-swatch__name">brand/rest</span><span class="ds-swatch__hex">#5832E0</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#7350FF"></span><span class="ds-swatch__name">brand/hover</span><span class="ds-swatch__hex">#7350FF</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#4823C0"></span><span class="ds-swatch__name">brand/active</span><span class="ds-swatch__hex">#4823C0</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#6C4ACC"></span><span class="ds-swatch__name">ai-augmented</span><span class="ds-swatch__hex">#6C4ACC</span></div>
+                  </div>
+                </div>
+
+                <div class="ds-color-group">
+                  <span class="ds-color-group__label">Primary action</span>
+                  <div class="ds-swatch-grid">
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#F5F5F7"></span><span class="ds-swatch__name">primary/rest</span><span class="ds-swatch__hex">#F5F5F7</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#E6E1FF"></span><span class="ds-swatch__name">primary/hover</span><span class="ds-swatch__hex">#E6E1FF</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#D2CBFF"></span><span class="ds-swatch__name">primary/active</span><span class="ds-swatch__hex">#D2CBFF</span></div>
+                  </div>
+                </div>
+
+                <div class="ds-color-group">
+                  <span class="ds-color-group__label">Secondary action</span>
+                  <div class="ds-swatch-grid">
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#232830"></span><span class="ds-swatch__name">secondary/rest</span><span class="ds-swatch__hex">#232830</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#2F3540"></span><span class="ds-swatch__name">secondary/hover</span><span class="ds-swatch__hex">#2F3540</span></div>
+                    <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#1A1E24"></span><span class="ds-swatch__name">secondary/active</span><span class="ds-swatch__hex">#1A1E24</span></div>
+                  </div>
+                </div>
+
+                <details class="ds-color-more">
+                  <summary class="ds-color-more__toggle">
+                    <span class="ds-color-more__label-show">View more</span>
+                    <span class="ds-color-more__label-hide">View less</span>
+                    <svg class="ds-color-more__chevron" viewBox="0 0 12 12" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m3 4.5 3 3 3-3"/></svg>
+                  </summary>
+
+                  <div class="ds-color-more__content">
+                  <div class="ds-color-group">
+                    <span class="ds-color-group__label">Border</span>
+                    <div class="ds-swatch-grid">
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#2A2F38"></span><span class="ds-swatch__name">layout/container</span><span class="ds-swatch__hex">#2A2F38</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#37404A"></span><span class="ds-swatch__name">layout/divider</span><span class="ds-swatch__hex">#37404A</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#3A3F49"></span><span class="ds-swatch__name">control/rest</span><span class="ds-swatch__hex">#3A3F49</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#4A4F59"></span><span class="ds-swatch__name">control/hover</span><span class="ds-swatch__hex">#4A4F59</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#353B45"></span><span class="ds-swatch__name">control/active</span><span class="ds-swatch__hex">#353B45</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#2A2D33"></span><span class="ds-swatch__name">control/disabled</span><span class="ds-swatch__hex">#2A2D33</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#F5F5F7"></span><span class="ds-swatch__name">control/focus</span><span class="ds-swatch__hex">#F5F5F7</span></div>
+                    </div>
+                  </div>
+
+                  <div class="ds-color-group">
+                    <span class="ds-color-group__label">Destructive</span>
+                    <div class="ds-swatch-grid">
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#C84852"></span><span class="ds-swatch__name">destructive/rest</span><span class="ds-swatch__hex">#C84852</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#D85B65"></span><span class="ds-swatch__name">destructive/hover</span><span class="ds-swatch__hex">#D85B65</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#A93840"></span><span class="ds-swatch__name">destructive/active</span><span class="ds-swatch__hex">#A93840</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#1B1E23"></span><span class="ds-swatch__name">destructive/disabled</span><span class="ds-swatch__hex">#1B1E23</span></div>
+                    </div>
+                  </div>
+
+                  <div class="ds-color-group">
+                    <span class="ds-color-group__label">Status</span>
+                    <div class="ds-swatch-grid">
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#1F8054"></span><span class="ds-swatch__name">success</span><span class="ds-swatch__hex">#1F8054</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#C8434A"></span><span class="ds-swatch__name">error</span><span class="ds-swatch__hex">#C8434A</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#A57C0D"></span><span class="ds-swatch__name">warning</span><span class="ds-swatch__hex">#A57C0D</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#0F6EA7"></span><span class="ds-swatch__name">in-progress</span><span class="ds-swatch__hex">#0F6EA7</span></div>
+                      <div class="ds-swatch"><span class="ds-swatch__chip" style="background:#5F6670"></span><span class="ds-swatch__name">pending</span><span class="ds-swatch__hex">#5F6670</span></div>
+                    </div>
+                  </div>
+                  </div>
+                </details>
+              </div>
+            </section>
+
+            <!-- Radius -->
+            <section class="ds-showcase__group">
+              <header class="ds-showcase__header">
+                <span class="ds-showcase__eyebrow">02</span>
+                <h4 class="ds-showcase__title">Corner radius tokens</h4>
+                <span class="ds-showcase__meta">5 tokens</span>
+              </header>
+              <div class="ds-radius-list">
+                <div class="ds-radius-row"><span class="ds-radius-row__sample" style="border-radius:0.8px"></span><span class="ds-radius-row__name">rounded-sm</span><span class="ds-radius-row__value">0.8</span></div>
+                <div class="ds-radius-row"><span class="ds-radius-row__sample" style="border-radius:2.8px"></span><span class="ds-radius-row__name">rounded-md</span><span class="ds-radius-row__value">2.8</span></div>
+                <div class="ds-radius-row"><span class="ds-radius-row__sample" style="border-radius:4.8px"></span><span class="ds-radius-row__name">rounded-lg</span><span class="ds-radius-row__value">4.8</span></div>
+                <div class="ds-radius-row"><span class="ds-radius-row__sample" style="border-radius:8.8px"></span><span class="ds-radius-row__name">rounded-xl</span><span class="ds-radius-row__value">8.8</span></div>
+                <div class="ds-radius-row"><span class="ds-radius-row__sample" style="border-radius:9999px"></span><span class="ds-radius-row__name">rounded-full</span><span class="ds-radius-row__value">9999</span></div>
+              </div>
+            </section>
+            </div>
+
+            <!-- Typography -->
+            <section class="ds-showcase__group">
+              <header class="ds-showcase__header">
+                <span class="ds-showcase__eyebrow">03</span>
+                <h4 class="ds-showcase__title">Typography</h4>
+                <span class="ds-showcase__meta">Inter · 11 styles</span>
+              </header>
+
+              <div class="ds-type-list">
+                <div class="ds-type-row" style="--ds-type-size:40px;--ds-type-line:48px;--ds-type-weight:700;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Display/L</span>
+                  <span class="ds-type-row__meta">700 · 40 / 48</span>
+                </div>
+                <div class="ds-type-row" style="--ds-type-size:32px;--ds-type-line:40px;--ds-type-weight:700;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Display/M</span>
+                  <span class="ds-type-row__meta">700 · 32 / 40</span>
+                </div>
+                <div class="ds-type-row" style="--ds-type-size:28px;--ds-type-line:36px;--ds-type-weight:700;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Display/S</span>
+                  <span class="ds-type-row__meta">700 · 28 / 36</span>
+                </div>
+                <div class="ds-type-row" style="--ds-type-size:24px;--ds-type-line:32px;--ds-type-weight:600;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Heading/H1</span>
+                  <span class="ds-type-row__meta">600 · 24 / 32</span>
+                </div>
+                <div class="ds-type-row" style="--ds-type-size:16px;--ds-type-line:24px;--ds-type-weight:600;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Body/L Strong</span>
+                  <span class="ds-type-row__meta">600 · 16 / 24</span>
+                </div>
+                <div class="ds-type-row" style="--ds-type-size:16px;--ds-type-line:24px;--ds-type-weight:400;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Body/L</span>
+                  <span class="ds-type-row__meta">400 · 16 / 24</span>
+                </div>
+                <div class="ds-type-row" style="--ds-type-size:14px;--ds-type-line:20px;--ds-type-weight:400;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Body/S</span>
+                  <span class="ds-type-row__meta">400 · 14 / 20</span>
+                </div>
+                <div class="ds-type-row" style="--ds-type-size:14px;--ds-type-line:20px;--ds-type-weight:500;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Control/M</span>
+                  <span class="ds-type-row__meta">500 · 14 / 20</span>
+                </div>
+                <div class="ds-type-row" style="--ds-type-size:14px;--ds-type-line:20px;--ds-type-weight:600;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Badge/M</span>
+                  <span class="ds-type-row__meta">600 · 14 / 20</span>
+                </div>
+                <div class="ds-type-row" style="--ds-type-size:12px;--ds-type-line:16px;--ds-type-weight:600;">
+                  <span class="ds-type-row__sample">Adapter training</span>
+                  <span class="ds-type-row__name">Badge/S</span>
+                  <span class="ds-type-row__meta">600 · 12 / 16</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Controls -->
+            <section class="ds-showcase__group">
+              <header class="ds-showcase__header">
+                <span class="ds-showcase__eyebrow">04</span>
+                <h4 class="ds-showcase__title">Controls</h4>
+              </header>
+              <div class="ds-state-tabs" role="tablist" aria-label="Component state">
+                <button type="button" class="ds-state-tab is-active" data-state="rest" role="tab" aria-selected="true">Rest</button>
+                <button type="button" class="ds-state-tab" data-state="hover" role="tab" aria-selected="false">Hover</button>
+                <button type="button" class="ds-state-tab" data-state="active" role="tab" aria-selected="false">Pressed</button>
+                <button type="button" class="ds-state-tab" data-state="disabled" role="tab" aria-selected="false">Disabled</button>
+              </div>
+
+              <div class="ds-controls-grid" data-ds-state="rest">
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Brand · purple = AI</span>
+                  <button class="ds-btn ds-btn--brand" type="button"><svg class="ds-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1.5 9.6 6.4 14.5 8 9.6 9.6 8 14.5 6.4 9.6 1.5 8 6.4 6.4z"/></svg>Generate</button>
+                </div>
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Primary</span>
+                  <button class="ds-btn ds-btn--primary" type="button">Continue</button>
+                </div>
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Secondary</span>
+                  <button class="ds-btn ds-btn--secondary" type="button">Cancel</button>
+                </div>
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Outline</span>
+                  <button class="ds-btn ds-btn--outline" type="button">Browse</button>
+                </div>
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Destructive</span>
+                  <button class="ds-btn ds-btn--destructive" type="button">Delete</button>
+                </div>
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Icon button</span>
+                  <button class="ds-btn ds-btn--secondary ds-btn--icon" type="button" aria-label="More"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="3" cy="8" r="1.4" fill="currentColor"/><circle cx="8" cy="8" r="1.4" fill="currentColor"/><circle cx="13" cy="8" r="1.4" fill="currentColor"/></svg></button>
+                </div>
+
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Input</span>
+                  <span class="ds-input"><input type="text" value="Cyberpunk neon" placeholder="Enter prompt"></span>
+                </div>
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Select</span>
+                  <span class="ds-select"><span class="ds-select__value">Adapter A · 2k frames</span><svg class="ds-select__icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="m4 6 4 4 4-4z"/></svg></span>
+                </div>
+                <div class="ds-control-cell ds-control-cell--wide">
+                  <span class="ds-control-cell__label">Textarea</span>
+                  <span class="ds-input ds-input--textarea"><textarea rows="2">A wide cinematic shot of a misty forest at dawn, cinematic lighting.</textarea></span>
+                </div>
+
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Checkbox</span>
+                  <label class="ds-check"><span class="ds-check__box"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m2.5 6 2.4 2.4L9.5 3.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ds-check__label">Auto-augment</span></label>
+                </div>
+                <div class="ds-control-cell">
+                  <span class="ds-control-cell__label">Radio</span>
+                  <label class="ds-radio"><span class="ds-radio__box"><span class="ds-radio__dot"></span></span><span class="ds-radio__label">High quality</span></label>
+                </div>
+                <div class="ds-control-cell ds-control-cell--wide">
+                  <span class="ds-control-cell__label">Status badges</span>
+                  <div class="ds-badge-row">
+                    <span class="ds-badge ds-badge--success">Success</span>
+                    <span class="ds-badge ds-badge--in-progress">Training</span>
+                    <span class="ds-badge ds-badge--warning">Low confidence</span>
+                    <span class="ds-badge ds-badge--error">Failed</span>
+                    <span class="ds-badge ds-badge--pending">Pending</span>
+                    <span class="ds-badge ds-badge--ai">AI augmented</span>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- What's Next -->
+      <section class="case-section section">
+        <h2 class="case-heading">What's Next</h2>
+        <div class="wroom-whats-next__intro">
+          <p>Wroom is ready for testing with real creative teams. The next phase focuses on validating the workflow with filmmakers, directors, and concept artists — people who have never touched a training script.</p>
+          <p>Key questions to explore:</p>
+        </div>
+        <div class="wroom-challenge-grid" role="list">
+          <article class="wroom-challenge-tile" role="listitem">
+            <h3 class="wroom-challenge-tile__title"><i data-lucide="hourglass" class="impact-title-icon" aria-hidden="true"></i>Adapter training wait times</h3>
+            <p class="wroom-challenge-tile__text">LoRA training can take significant time. Can creative professionals stay in flow during that wait, or does it break their process? What feedback or progress visibility would help?</p>
+          </article>
+          <article class="wroom-challenge-tile" role="listitem">
+            <h3 class="wroom-challenge-tile__title"><i data-lucide="repeat-2" class="impact-title-icon" aria-hidden="true"></i>Iteration count in practice</h3>
+            <p class="wroom-challenge-tile__text">How many rounds of adapter training does it actually take to reach a satisfying result? And how does Wroom fit alongside tools like Photoshop that teams already use mid-iteration?</p>
+          </article>
+          <article class="wroom-challenge-tile" role="listitem">
+            <h3 class="wroom-challenge-tile__title"><i data-lucide="scissors" class="impact-title-icon" aria-hidden="true"></i>The gap between export and edit</h3>
+            <p class="wroom-challenge-tile__text">After clips are generated, filmmakers still need to assemble them into a final cut. Are there unmet needs in that handoff that Wroom could address?</p>
+          </article>
+          <article class="wroom-challenge-tile" role="listitem">
+            <h3 class="wroom-challenge-tile__title"><i data-lucide="sliders-horizontal" class="impact-title-icon" aria-hidden="true"></i>Model-specific training parameters</h3>
+            <p class="wroom-challenge-tile__text">Different base models may require different LoRA configurations to perform well. Further research is needed to understand whether exposing additional parameters becomes necessary — and if so, how to surface them without overwhelming non-technical users.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Back to work -->
+      <div class="case-section section">
+        <a href="index.html#work" class="link-arrow">Back to Selected work</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Wei-Hung Hsieh</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="script.js"></script>
+  <script>if (typeof lucide !== 'undefined') lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+/* Slide 6 — Insight dataviz gallery (same behavior as microsoft-playwright-testing Insight section) */
+
+.slide-6 {
+  --slide-6-space-sm: 0.75rem;
+  --slide-6-space-md: 1rem;
+  --slide-6-dataviz-bg: #1a1d23;
+  --slide-6-dataviz-border: #30363d;
+}
+
+/* Full-bleed content rail like slide-5 columns — use full slide width minus .slide padding (no 72rem cap) */
+.slide-6 .slide-6-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: stretch;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  box-sizing: border-box;
+}
+
+/* Title stays top-aligned; diagram block is vertically centered in remaining height */
+.slide-6 .slide-6-dataviz-host {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-6 .slide-6-insight .dataviz-viewport {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.slide-6 .slide-6-insight .dataviz-panes {
+  position: relative;
+  margin-bottom: var(--slide-6-space-sm);
+}
+
+.slide-6 .slide-6-insight .dataviz-pane {
+  position: absolute;
+  inset: 0;
+  overflow-x: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.slide-6 .slide-6-insight .dataviz-pane--active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide-6 .slide-6-insight .dataviz-gallery__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--slide-6-space-md);
+}
+
+.slide-6 .slide-6-insight .dataviz-gallery__row {
+  flex-shrink: 0;
+}
+
+.slide-6 .slide-6-insight .dataviz-gallery__scroll {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide-6 .slide-6-insight .dataviz-gallery__track {
+  display: flex;
+  width: max-content;
+  /* duration set by JS from track width — fallback matches prior ~90s feel */
+  animation: deck-dataviz-scroll var(--dataviz-scroll-duration, 90s) linear infinite;
+}
+
+.slide-6 .slide-6-insight .dataviz-gallery__track--reverse {
+  animation-direction: reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-6 .slide-6-insight .dataviz-gallery__track {
+    animation: none;
+  }
+}
+
+@keyframes deck-dataviz-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slide-6 .slide-6-insight .dataviz-gallery__row-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--slide-6-space-md);
+  flex-shrink: 0;
+  padding-right: var(--slide-6-space-md);
+}
+
+.slide-6 .slide-6-insight .dataviz-gallery__row-track img {
+  display: block;
+  height: calc(1.3 * clamp(140px, 16vh, 200px));
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.slide-6 .slide-6-insight .dataviz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+}
+
+.slide-6 .slide-6-insight .dataviz-label {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--deck-muted);
+}
+
+.slide-6 .slide-6-insight .dataviz-tabs {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: var(--slide-6-dataviz-bg);
+  border-radius: 999px;
+  padding: 2px;
+  border: 1px solid var(--slide-6-dataviz-border);
+}
+
+.slide-6 .slide-6-insight .dataviz-tab-slider {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: var(--tab-slider-left, 2px);
+  width: var(--tab-slider-width, 0);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.slide-6 .slide-6-insight .dataviz-tab {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: #a8b0ba;
+  background: transparent;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: color 0.2s ease;
+}
+
+.slide-6 .slide-6-insight .dataviz-tab:hover {
+  color: var(--deck-fg);
+}
+
+.slide-6 .slide-6-insight .dataviz-tab--active {
+  color: var(--deck-fg);
+  font-weight: 600;
+}

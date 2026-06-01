@@ -1,0 +1,5 @@
+.DS_Store
+.http-server-*.log
+
+# Widget source — built output lives in assets/fluent-micro-widget/
+fluent-micro-widget/node_modules/

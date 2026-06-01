@@ -1,0 +1,374 @@
+/* Slides 8–9 — collaboration diagram (projects + designer hub + design org) */
+
+.slide-8 .slide-8-inner,
+.slide-9 .slide-9-inner,
+.slide-10 .slide-10-inner,
+.slide-11 .slide-11-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: min(96vw, 64rem);
+  margin: 0 auto;
+}
+
+/* Process workflow slides — cap content to 1024px */
+.slide-12 .slide-12-inner,
+.slide-13 .slide-13-inner,
+.slide-14 .slide-14-inner,
+.slide-15 .slide-15-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: min(96vw, 1024px);
+  margin: 0 auto;
+}
+
+.slide-8 .collab-diagram,
+.slide-9 .collab-diagram,
+.slide-10 .collab-diagram,
+.slide-11 .collab-diagram {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--font-sans);
+}
+
+/* Hub: projects shell (one line out) → Designer → CoreAI */
+.collab-hub {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(1.25rem, 2.75rem) auto minmax(1.25rem, 2.75rem) minmax(0, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  gap: 0.35rem 0.2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.collab-hub__projects-shell {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.55rem, 1.6vw, 0.85rem);
+  min-width: 0;
+  padding: clamp(1.05rem, 2.8vw, 1.65rem);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(165deg, rgba(40, 44, 54, 0.95) 0%, rgba(22, 24, 30, 0.98) 100%);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Shell label — same style as CoreAI Design title; gap handles spacing below */
+.collab-hub__projects-shell > .collab-bubble__title {
+  margin-bottom: 0;
+}
+
+.collab-bubble--project-nested {
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.09);
+  padding: clamp(0.65rem, 1.8vw, 0.95rem) clamp(0.85rem, 2vw, 1.2rem);
+}
+
+.collab-hub__connector--from-projects {
+  grid-column: 2;
+}
+
+.collab-hub__center--hub {
+  grid-column: 3;
+}
+
+.collab-hub__connector--to-design {
+  grid-column: 4;
+}
+
+.collab-hub__design {
+  grid-column: 5;
+}
+
+.collab-bubble {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--terminal-bg, #1a1d23);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  padding: clamp(0.75rem, 2vw, 1.1rem) clamp(1rem, 2.5vw, 1.35rem);
+  min-width: 0;
+}
+
+/* Design org: portrait stack for role blocks — taller min height */
+.collab-bubble--design {
+  padding: clamp(1rem, 2.5vw, 1.45rem) clamp(1rem, 2.2vw, 1.35rem);
+  min-height: clamp(12rem, 32vh, 19rem);
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
+}
+
+.collab-hub__projects-shell .collab-chip {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+  max-width: 9rem;
+}
+
+.collab-project-view-design {
+  margin: clamp(0.45rem, 1.4vw, 0.7rem) 0 0;
+  padding-top: clamp(0.4rem, 1.1vw, 0.55rem);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.collab-view-design-link {
+  font-size: clamp(0.68rem, 1.05vw, 0.78rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #c8dafb;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.collab-view-design-link:hover {
+  color: #e8f0ff;
+}
+
+.collab-view-design-link:focus-visible {
+  outline: 2px solid rgba(168, 199, 255, 0.65);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.collab-bubble__title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(0.7rem, 1.1vw, 0.8125rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--deck-muted);
+}
+
+.collab-hub__connector {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 1px;
+  align-self: center;
+  width: 100%;
+  min-width: 0.75rem;
+  max-width: 100%;
+}
+
+.collab-hub__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem 0;
+  min-width: 0;
+}
+
+.collab-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.45rem;
+}
+
+/* Slides 9–11 Azure SRE Agent: PM row, then two people per row */
+.slide-9 .collab-chips--pm-and-two-col,
+.slide-10 .collab-chips--pm-and-two-col,
+.slide-11 .collab-chips--pm-and-two-col {
+  flex-direction: column;
+  align-items: stretch;
+  gap: clamp(0.45rem, 1.2vw, 0.65rem);
+}
+
+.slide-9 .collab-chips__pm-row,
+.slide-10 .collab-chips__pm-row,
+.slide-11 .collab-chips__pm-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.45rem;
+}
+
+.slide-9 .collab-chips__people-grid,
+.slide-10 .collab-chips__people-grid,
+.slide-11 .collab-chips__people-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem 0.45rem;
+  width: 100%;
+}
+
+.slide-9 .collab-chips__people-grid .collab-chip,
+.slide-10 .collab-chips__people-grid .collab-chip,
+.slide-11 .collab-chips__people-grid .collab-chip {
+  justify-content: center;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.collab-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  font-size: clamp(0.7rem, 1.15vw, 0.8125rem);
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--deck-fg);
+  white-space: nowrap;
+}
+
+.collab-chip--accent {
+  background: rgba(168, 199, 255, 0.14);
+  border-color: rgba(168, 199, 255, 0.4);
+  color: #d4e4ff;
+}
+
+.collab-chip--you {
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  font-size: clamp(0.78rem, 1.25vw, 0.875rem);
+}
+
+/* Org roles: vertical stack — heights ~70% · 20% · 10% (flex 7:2:1); strip ×1.2³ vs base */
+.collab-org-roles {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: calc(0.35rem * 1.2 * 1.2 * 1.2);
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  padding-top: calc(0.25rem * 1.2 * 1.2 * 1.2);
+}
+
+.collab-org-role {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+}
+
+.collab-org-roles > .collab-org-role {
+  padding: calc(0.4rem * 1.2 * 1.2 * 1.2) calc(0.5rem * 1.2 * 1.2 * 1.2);
+}
+
+/* UX designers row — vertical share ×1.4 vs prior 12.096 */
+.collab-org-role--ux {
+  flex: 16.9344 1 0;
+}
+
+.collab-org-role--research {
+  flex: 3.456 1 0;
+}
+
+.collab-org-role--content {
+  flex: 1.728 1 0;
+}
+
+/* Slide 11: UX row 0.7× base UX flex (16.9344); Design engineers row = same flex as researchers */
+.collab-org-roles--slide-11 .collab-org-role--ux {
+  flex: 11.85408 1 0;
+}
+
+.collab-org-roles--slide-11 .collab-org-role--design-eng {
+  flex: 3.456 1 0;
+}
+
+.collab-org-role__label {
+  font-size: clamp(0.7rem, 1.15vw, 0.8125rem);
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--deck-fg);
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+/* Bottom row: Visual + Motion side by side (~60% / 40%) */
+.collab-org-visual-motion {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0.35rem;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 0.45rem;
+  min-height: 0;
+}
+
+.collab-org-visual-motion .collab-org-role {
+  width: auto;
+}
+
+.collab-org-role--visual {
+  flex: 3 1 0;
+  min-width: 0;
+}
+
+.collab-org-role--motion {
+  flex: 2 1 0;
+  min-width: 0;
+}
+
+.collab-scale {
+  margin: 0 0 0.5rem;
+  font-size: clamp(0.72rem, 1.15vw, 0.8125rem);
+  color: var(--deck-muted);
+  line-height: 1.35;
+}
+
+@media (max-width: 720px) {
+  .collab-hub {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .collab-hub__projects-shell,
+  .collab-hub__connector--from-projects,
+  .collab-hub__center--hub,
+  .collab-hub__connector--to-design,
+  .collab-hub__design {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    width: 100%;
+  }
+
+  .collab-hub__connector {
+    width: 1px;
+    height: clamp(0.75rem, 3vw, 1.25rem);
+    min-height: 0.75rem;
+    max-width: none;
+    margin: 0 auto;
+    align-self: center;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.28),
+      rgba(255, 255, 255, 0.12)
+    );
+  }
+}

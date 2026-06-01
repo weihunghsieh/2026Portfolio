@@ -1,0 +1,766 @@
+/* Interactive slide deck — standalone */
+
+:root {
+  --deck-bg: #0c0d10;
+  --deck-fg: #e8e6e3;
+  --deck-muted: #8a8680;
+  --deck-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --terminal-bg: #1a1d23;
+  --terminal-header-bg: #252830;
+  --terminal-text: #9ece9a;
+  --terminal-border: #3d424d;
+  --terminal-radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  max-height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: var(--deck-font);
+  background: var(--deck-bg);
+  color: var(--deck-fg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.deck {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  padding: clamp(1.125rem, 3vw, 2.25rem);
+}
+
+.deck-viewport {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.deck-track {
+  display: flex;
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  flex-shrink: 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 4.5vw, 2.625rem);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.slide-inner {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.slide-inner--text {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+
+/* Match prototype frame width (e.g. 1440) so Figma embed isn’t letterboxed/cropped by a tiny iframe */
+.slide-inner--embed {
+  max-width: min(96vw, 1440px);
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide-inner--embed .slide-page-title {
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  flex-shrink: 0;
+}
+
+/* Title block: readable width, anchored top-left (slides 2–5) */
+.slide-inner--page-title {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: min(66.67vw, 42rem);
+  margin-inline: 0;
+  margin-right: auto;
+  align-self: flex-start;
+}
+
+/* Narrative + embed slides: content column flush left, not centered */
+.slide-2 .slide-inner.slide-inner--embed,
+.slide-3 .slide-inner.slide-inner--embed,
+.slide-4 .slide-inner.slide-inner--embed {
+  margin-inline: 0;
+  align-self: stretch;
+  width: 100%;
+}
+
+/* Fills space below title; JS scales .slide-5-columns-scale-wrap to fit (see deck.js) */
+.slide-5-columns-host {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.slide-5-columns-scale-wrap {
+  width: 100%;
+  transform-origin: top left;
+  will-change: transform;
+}
+
+.slide-5-columns {
+  display: grid;
+  /* ~10% wider middle + right vs equal thirds: 8+11+11 (branding slightly narrower) */
+  grid-template-columns: minmax(0, 8fr) minmax(0, 11fr) minmax(0, 11fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  min-height: 0;
+  width: 100%;
+  align-self: stretch;
+  align-items: stretch;
+  padding-inline: 0;
+  box-sizing: border-box;
+  /* Branding + design system: same offset below column label */
+  --slide-5-col-content-top: clamp(0.75rem, 2vw, 1.25rem);
+  /* Match diagram card inner inset — keeps row 1 aligned with branding thumbnails */
+  --slide-5-inner-pad: 0.5rem;
+}
+
+.slide-5-col {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: stretch;
+}
+
+/* Label above rule; rule shares the same left edge as the text */
+/* Shared padding below column title — same for branding / design system / layout */
+.slide-5-col-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  padding-top: var(--slide-5-col-content-top);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  /* Left-align column blocks (branding stack, palette); children set width where needed */
+  align-items: flex-start;
+}
+
+.slide-5-col-body--empty {
+  min-height: 0;
+}
+
+.slide-5-col-label {
+  margin: 0;
+  padding: 0 0 clamp(0.5rem, 1.5vw, 0.75rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--deck-font);
+  font-size: clamp(0.9375rem, 1.65vw, 1.0625rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  /* Brighter than --deck-muted (#8a8680) for contrast on --deck-bg */
+  color: #b8b3ab;
+  line-height: 1.4;
+  text-align: left;
+  align-self: stretch;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide-5-col-stack {
+  /* Flex column: each thumbnail row is only as tall as its image (no grid row stretch) */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Slightly tighter than line→content gap */
+  gap: calc(var(--slide-5-col-content-top) * 0.82);
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  /* flex-shrink: 0: avoid clipping thumbnails when column height is tight (overflow:hidden would set min-size to 0) */
+  flex: 1 0 auto;
+  width: 90%;
+  align-self: flex-start;
+  margin-inline: 0;
+}
+
+.slide-5-col-img-wrap {
+  min-width: 0;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Thumbnails: width caps to column; height follows aspect ratio; wrap hugs image */
+.slide-5-col-img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: left top;
+  /* Match design-system diagram chrome: .color-swatch-group__icons / .color-swatch-row (8px) */
+  border-radius: 8px;
+}
+
+.slide-5-col-img-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 0 0 auto;
+  min-width: 0;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  border-radius: 8px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.slide-5-col-img-trigger:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+.slide-5-col-img-trigger .slide-5-col-img-wrap {
+  flex: 0 0 auto;
+}
+
+/* Full-size branding: flex frame so <img> is never stretched; no parent opacity; no blob URL */
+.deck-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-sizing: border-box;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.deck-lightbox.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.deck-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.78);
+  cursor: pointer;
+  z-index: 0;
+}
+
+.deck-lightbox__frame {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(100vw - 2rem);
+  height: min(88vh, calc(100dvh - 4rem));
+  max-height: min(88vh, calc(100dvh - 4rem));
+  min-width: 0;
+  min-height: 0;
+  pointer-events: none;
+}
+
+/* Scale to fit the frame height (contain); intrinsic size caps — no upscale past natural pixels */
+.deck-lightbox__img {
+  display: block;
+  flex: 0 1 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  object-fit: contain;
+  object-position: center center;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.deck-lightbox__close {
+  position: fixed;
+  top: clamp(0.75rem, 2vw, 1.25rem);
+  right: clamp(0.75rem, 2vw, 1.25rem);
+  z-index: 3;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.deck-lightbox__close:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+@media (max-width: 520px) {
+  .slide-5-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .slide-5-col + .slide-5-col .slide-5-col-label {
+    padding-top: clamp(0.5rem, 2vw, 0.75rem);
+  }
+}
+
+.slide-2 .slide-page-title,
+.slide-3 .slide-page-title,
+.slide-4 .slide-page-title,
+.slide-5 .slide-page-title,
+.slide-6 .slide-page-title,
+.slide-7 .slide-page-title,
+.slide-8 .slide-page-title,
+.slide-9 .slide-page-title,
+.slide-10 .slide-page-title,
+.slide-11 .slide-page-title,
+.slide-12 .slide-page-title,
+.slide-13 .slide-page-title,
+.slide-14 .slide-page-title,
+.slide-15 .slide-page-title {
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  max-width: 100%;
+  margin-top: 0;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.slide-3 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.slide-4 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.slide-2 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.slide-5 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-6 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-7 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.slide-8 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-9 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-10 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-11 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-12 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-13 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-14 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-15 {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slide-8 .slide-inner,
+.slide-9 .slide-inner,
+.slide-10 .slide-inner,
+.slide-11 .slide-inner,
+.slide-12 .slide-inner,
+.slide-13 .slide-inner,
+.slide-14 .slide-inner,
+.slide-15 .slide-inner {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-6 .slide-inner {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Insight slide: full width inside .slide padding (overrides global .slide-inner 72rem cap) */
+section.slide.slide-6 > .slide-inner.slide-6-inner {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+}
+
+.slide-5 .slide-inner--page-title {
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+/* Fills all space below the title; #figma-container stretches to match */
+.figma-embed-slot {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  min-height: 0;
+  width: 100%;
+}
+
+/*
+ * Figma: wrapper is position:absolute so iframe layout height doesn’t stretch the slide.
+ * This div fills the slot (remaining vertical space); JS scales the prototype to fit inside.
+ */
+.slide-inner--embed .figma-container {
+  margin-inline: 0;
+}
+
+.slide-inner--embed .slide-structure-diagram {
+  margin-inline: 0;
+}
+
+.figma-container {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  /* Solid black behind scaled iframe / letterboxing */
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.figma-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 720px;
+  transform-origin: top left;
+  will-change: transform;
+  background: #000;
+}
+
+.figma-embed {
+  display: block;
+  width: 1440px;
+  height: 720px;
+  border: none;
+  background-color: #000;
+  color-scheme: dark;
+}
+
+.slide-page-title {
+  font-family: var(--deck-font);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--deck-fg);
+}
+
+.slide-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(4rem, 10vw, 7rem);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .slide-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: clamp(4rem, 8vw, 8rem);
+  }
+}
+
+.slide-col--static {
+  text-align: right;
+}
+
+/* Slide 1: label higher, more air before name; name centered in column */
+.slide-1 .slide-col--static {
+  margin-top: clamp(-2rem, -4vh, -0.75rem);
+}
+
+.slide-1 .slide-label {
+  margin-bottom: clamp(1.75rem, 4vh, 2.75rem);
+}
+
+.slide-1 .slide-name {
+  text-align: center;
+}
+
+.slide-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--deck-muted);
+  margin: 0 0 1.25rem;
+}
+
+.slide-name {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0 0 0.75rem;
+}
+
+.slide-title {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 400;
+  color: var(--deck-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.slide-col--terminal {
+  min-width: 0;
+  text-align: left;
+}
+
+/* Landing page — terminal + typewriter (same structure as index hero) */
+.hero-terminal {
+  background: var(--terminal-bg);
+  border: 1px solid var(--terminal-border);
+  border-radius: var(--terminal-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.hero-terminal-header {
+  background: var(--terminal-header-bg);
+  padding: 0.625rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--terminal-border);
+}
+
+.hero-terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.hero-terminal-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4a4e5a;
+}
+
+.hero-terminal-dots span:nth-child(1) {
+  background: #ed6a5e;
+}
+
+.hero-terminal-dots span:nth-child(2) {
+  background: #f5bd4f;
+}
+
+.hero-terminal-dots span:nth-child(3) {
+  background: #61c554;
+}
+
+.hero-terminal-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--deck-muted);
+  letter-spacing: 0.02em;
+}
+
+.hero-keywords {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--terminal-text);
+  min-height: 11.5em;
+  padding: 1.25rem 1.25rem 1.5rem;
+  overflow: visible;
+}
+
+.hero-keyword-current {
+  display: inline;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.hero-keyword-cursor {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--terminal-text);
+  margin-left: 2px;
+  animation: hero-cursor-blink 1s step-end infinite;
+}
+
+@keyframes hero-cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-keyword-cursor {
+    animation: none;
+  }
+}
+
+.deck-hint {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  color: var(--deck-muted);
+  opacity: 0.7;
+}
